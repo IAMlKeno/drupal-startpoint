@@ -1,4 +1,4 @@
-FROM drupal:11.3.16-php8.5
+FROM drupal:11.3.16-php8.4-apache-trixie
 
 RUN apt-get update -y && apt-get install vim -y
 RUN ln -s /opt/drupal/vendor/bin/drush /usr/bin/drush

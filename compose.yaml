@@ -13,10 +13,13 @@ services:
     expose:
       - 80
     volumes:
-    #  - ./drupal/files:/opt/drupal/web/sites/default/files
+      - ./drupal/files:/opt/drupal/web/sites/default/files
+      - ./drupal/config:/opt/drupal/config
       - ./drupal/modules/custom:/opt/drupal/web/modules/custom
       - ./drupal/themes/custom:/opt/drupal/web/themes/custom
-    #  - ./drupal/config/sync:/opt/drupal/config/sync
+      - ./drupal/composer.json:/opt/drupal/composer.json
+      - ./drupal/composer.lock:/opt/drupal/composer.lock
+      - ./drupal/settings.local.php:/opt/drupal/web/sites/default/settings.local.php
     networks:
       - swc-network
   db:
