@@ -11,14 +11,160 @@ description: 'View athlete challenge enrollments'
 tag: ''
 base_table: challenge_enrollment
 base_field: id
-core: true
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
+      fields:
+        challenge:
+          id: challenge
+          table: challenge_enrollment
+          field: challenge
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Challenge
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          format_plural: false
+        status:
+          id: status
+          table: challenge_enrollment
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Status
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          format_plural: false
+        joined_date:
+          id: joined_date
+          table: challenge_enrollment
+          field: joined_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Joined Date'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: datetime_default
+          settings:
+            format_type: short
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          format_plural: false
+        starting_squat_1rm:
+          id: starting_squat_1rm
+          table: challenge_enrollment
+          field: starting_squat_1rm
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Starting Squat 1RM'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          format_plural: false
+        current_squat_1rm:
+          id: current_squat_1rm
+          table: challenge_enrollment
+          field: current_squat_1rm
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Current Squat 1RM'
+          exclude: false
+          alter:
+            alter_text: false
+          element_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          format_plural: false
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+      exposed_form:
+        type: basic
+        options: {  }
       access:
         type: role
         options:
@@ -26,21 +172,12 @@ display:
             authenticated: authenticated
       cache:
         type: tag
-        options: {}
-      query:
-        type: views_query
-        options: {}
-      exposed_form:
-        type: basic
-        options: {}
-      pager:
-        type: mini
-        options:
-          items_per_page: 10
+        options: {  }
+      filters: {  }
       style:
         type: table
         options:
-          grouping: []
+          grouping: {  }
           row_class: ''
           default_row_class: true
           columns:
@@ -87,158 +224,20 @@ display:
           empty_table: false
       row:
         type: fields
-        options: {}
-      fields:
-        challenge:
-          id: challenge
-          table: challenge_enrollment
-          field: challenge
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Challenge
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
-        status:
-          id: status
-          table: challenge_enrollment
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Status
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
-        joined_date:
-          id: joined_date
-          table: challenge_enrollment
-          field: joined_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Joined Date'
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: datetime_default
-          settings:
-            format_type: short
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
-        starting_squat_1rm:
-          id: starting_squat_1rm
-          table: challenge_enrollment
-          field: starting_squat_1rm
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Starting Squat 1RM'
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: false
-          group_column: value
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
-        current_squat_1rm:
-          id: current_squat_1rm
-          table: challenge_enrollment
-          field: current_squat_1rm
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Current Squat 1RM'
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: false
-          group_column: value
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
-      filters: {}
+        options: {  }
+      query:
+        type: views_query
+        options: {  }
   page:
-    display_plugin: page
     id: page
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {}
+      display_extenders: {  }
       path: athlete-challenges
       menu:
         type: tab
         title: 'Athlete Challenges'
-        expanded: false
         weight: 0
+        expanded: false
