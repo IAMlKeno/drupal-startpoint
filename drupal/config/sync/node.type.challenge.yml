@@ -1,7 +1,7 @@
 uuid: 550e8400-e29b-41d4-a716-446655440100
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 name: Challenge
 type: challenge
 description: 'A training challenge (e.g., Squatober 2026)'

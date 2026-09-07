@@ -16,10 +16,10 @@ label: Exercises
 description: 'Exercises in this workout'
 required: false
 translatable: false
-default_value: []
+default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'paragraphs'
+  handler: paragraphs
   handler_settings:
     negate: 0
     target_bundles:

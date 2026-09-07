@@ -15,18 +15,7 @@ label: 'Primary Muscle Group'
 description: 'Primary muscle group targeted'
 required: false
 translatable: true
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_values:
-    quadriceps: Quadriceps
-    glutes: Glutes
-    hamstrings: Hamstrings
-    chest: Chest
-    back: Back
-    shoulders: Shoulders
-    triceps: Triceps
-    biceps: Biceps
-    core: Core
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string

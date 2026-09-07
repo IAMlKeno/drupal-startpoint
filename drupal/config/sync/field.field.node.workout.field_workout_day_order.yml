@@ -9,11 +9,15 @@ id: node.workout.field_workout_day_order
 field_name: field_workout_day_order
 entity_type: node
 bundle: workout
-label: 'Day/Order'
+label: Day/Order
 description: 'Workout day number or order in sequence'
 required: false
 translatable: false
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings: {}
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
 field_type: integer

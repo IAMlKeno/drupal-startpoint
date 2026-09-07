@@ -15,15 +15,7 @@ label: Category
 description: 'Exercise category'
 required: false
 translatable: true
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_values:
-    squat: Squat
-    bench: Bench
-    deadlift: Deadlift
-    auxiliary: Auxiliary
-    mobility: Mobility
-    conditioning: Conditioning
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string

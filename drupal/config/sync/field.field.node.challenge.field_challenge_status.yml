@@ -11,19 +11,13 @@ id: node.challenge.field_challenge_status
 field_name: field_challenge_status
 entity_type: node
 bundle: challenge
-label: 'Status'
+label: Status
 description: 'Challenge status'
 required: true
 translatable: false
 default_value:
-  - value: draft
+  -
+    value: draft
 default_value_callback: ''
-settings:
-  allowed_values:
-    draft: Draft
-    upcoming: Upcoming
-    active: Active
-    completed: Completed
-    archived: Archived
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string

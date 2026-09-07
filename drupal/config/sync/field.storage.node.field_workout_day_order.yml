@@ -8,11 +8,13 @@ id: node.field_workout_day_order
 field_name: field_workout_day_order
 entity_type: node
 type: integer
-settings: {}
+settings:
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1
 translatable: true
-indexes: {}
+indexes: {  }
 persist_with_no_fields: false
 custom_storage: false

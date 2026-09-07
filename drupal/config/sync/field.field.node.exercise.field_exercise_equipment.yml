@@ -15,16 +15,7 @@ label: Equipment
 description: 'Required equipment'
 required: false
 translatable: true
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_values:
-    barbell: Barbell
-    dumbbell: Dumbbell
-    kettlebell: Kettlebell
-    resistance_band: Resistance Band
-    machine: Machine
-    bodyweight: Bodyweight
-    cable: Cable
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string

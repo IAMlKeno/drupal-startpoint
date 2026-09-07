@@ -13,7 +13,7 @@ label: Exercise
 description: 'Exercise to perform'
 required: true
 translatable: false
-default_value: []
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:node'

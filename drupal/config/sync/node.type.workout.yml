@@ -1,7 +1,7 @@
 uuid: 550e8400-e29b-41d4-a716-446655440310
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 name: Workout
 type: workout
 description: 'Prescribed workout/training session'
