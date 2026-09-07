@@ -1,0 +1,8 @@
+services:
+  swc.progress_service:
+    class: Drupal\swc\Service\ProgressService
+    arguments: ['@entity_type.manager']
+
+  swc.funnel_tracker:
+    class: Drupal\swc\Service\FunnelTracker
+    arguments: ['@logger.factory']

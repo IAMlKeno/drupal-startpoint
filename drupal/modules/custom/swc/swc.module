@@ -86,3 +86,39 @@ function swc_video_submission_insert($entity) {
     ['@athlete' => $entity->getAthlete()->getDisplayName()]
   );
 }
+
+/**
+ * Implements hook_theme().
+ */
+function swc_theme() {
+  return [
+    'athlete_dashboard' => [
+      'variables' => [
+        'user' => NULL,
+        'welcome_message' => '',
+        'challenge' => NULL,
+        'challenge_progress' => NULL,
+        'today_workout' => NULL,
+        'metrics' => [],
+        'recent_check_ins' => [],
+        'pending_feedback' => [],
+        'has_coach' => FALSE,
+        'coach' => NULL,
+        'coaching_cta' => '',
+      ],
+      'template' => 'athlete-dashboard',
+    ],
+    'coach_dashboard' => [
+      'variables' => [
+        'coach' => NULL,
+        'welcome_message' => '',
+        'needs_attention' => [],
+        'pending_videos' => [],
+        'pending_check_ins' => [],
+        'active_athletes' => [],
+        'active_relationships' => [],
+      ],
+      'template' => 'coach-dashboard',
+    ],
+  ];
+}
