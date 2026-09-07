@@ -1,0 +1,91 @@
+<div class="swc-athlete-dashboard">
+  <header class="dashboard-header">
+    <h1>{{ welcome_message }}</h1>
+  </header>
+
+  {% if challenge %}
+    <section class="challenge-progress">
+      <h2>{{ challenge.label }}</h2>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: {{ challenge_progress.percentage }}%"></div>
+      </div>
+      <p>{{ challenge_progress.current }} of {{ challenge_progress.total }} workouts completed ({{ challenge_progress.percentage }}%)</p>
+    </section>
+  {% endif %}
+
+  {% if today_workout %}
+    <section class="today-workout">
+      <h2>Today's Workout</h2>
+      <div class="workout-card">
+        <h3>{{ today_workout.label }}</h3>
+        {% if today_workout.body.0 %}
+          <p>{{ today_workout.body.0.value|raw }}</p>
+        {% endif %}
+        <a href="{{ today_workout.toUrl }}" class="btn btn-primary">View Workout</a>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if metrics %}
+    <section class="metrics">
+      <h2>Your Progress</h2>
+      <div class="metrics-grid">
+        <div class="metric">
+          <strong>Total Sessions</strong>
+          <span class="value">{{ metrics.total_sessions }}</span>
+        </div>
+        <div class="metric">
+          <strong>Completed</strong>
+          <span class="value">{{ metrics.workouts_completed }}</span>
+        </div>
+        <div class="metric">
+          <strong>Current Streak</strong>
+          <span class="value">{{ metrics.current_streak }} days</span>
+        </div>
+        <div class="metric">
+          <strong>Completion Rate</strong>
+          <span class="value">{{ metrics.completion_percentage }}%</span>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if recent_check_ins %}
+    <section class="recent-check-ins">
+      <h2>Your Recent Check-ins</h2>
+      <ul>
+        {% for check_in in recent_check_ins %}
+          <li>
+            <strong>{{ check_in.created|date('M d, Y') }}</strong>
+            Energy: {{ check_in.energy.value }}/5 | Recovery: {{ check_in.recovery.value }}/5
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if pending_feedback %}
+    <section class="coach-feedback">
+      <h2>Coach Feedback</h2>
+      {% for video in pending_feedback %}
+        <div class="feedback-card">
+          <p><strong>Feedback from coach:</strong></p>
+          <p>{{ video.coach_feedback.value }}</p>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if has_coach %}
+    <section class="coach-info">
+      <h2>Your Coach</h2>
+      <p>{{ coach.getDisplayName }}</p>
+    </section>
+  {% else %}
+    <section class="coaching-cta">
+      <h2>Next Steps</h2>
+      <p>{{ coaching_cta }}</p>
+      <a href="/apply-for-coaching" class="btn btn-primary">Apply for Coaching</a>
+    </section>
+  {% endif %}
+</div>

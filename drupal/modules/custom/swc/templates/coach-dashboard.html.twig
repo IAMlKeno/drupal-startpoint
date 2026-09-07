@@ -1,0 +1,114 @@
+<div class="swc-coach-dashboard">
+  <header class="dashboard-header">
+    <h1>{{ welcome_message }}</h1>
+  </header>
+
+  <section class="needs-attention">
+    <h2>Needs Your Attention</h2>
+    <div class="attention-summary">
+      <div class="attention-item">
+        <strong>{{ needs_attention.pending_videos }}</strong> video submissions pending review
+      </div>
+      <div class="attention-item">
+        <strong>{{ needs_attention.pending_check_ins }}</strong> check-ins needing follow-up
+      </div>
+    </div>
+  </section>
+
+  {% if pending_videos %}
+    <section class="pending-videos">
+      <h2>Pending Video Reviews</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Athlete</th>
+            <th>Submitted</th>
+            <th>Workout</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for video in pending_videos %}
+            <tr>
+              <td>{{ video.getAthlete.getDisplayName }}</td>
+              <td>{{ video.submitted_date.value|date('M d, Y') }}</td>
+              <td>{% if video.getSession %}{{ video.getSession.getWorkout.label }}{% endif %}</td>
+              <td><a href="{{ video.toUrl }}">Review</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p><a href="/admin/swc/pending-videos">View All Pending Videos</a></p>
+    </section>
+  {% endif %}
+
+  {% if pending_check_ins %}
+    <section class="pending-check-ins">
+      <h2>Check-ins Needing Attention</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Athlete</th>
+            <th>Date</th>
+            <th>Energy</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for check_in in pending_check_ins %}
+            <tr>
+              <td>{{ check_in.getAthlete.getDisplayName }}</td>
+              <td>{{ check_in.created|date('M d, Y') }}</td>
+              <td>{{ check_in.energy.value }}/5</td>
+              <td>{{ check_in.review_status.value }}</td>
+              <td><a href="{{ check_in.toUrl }}">Review</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p><a href="/admin/swc/check-ins-needing-attention">View All Check-ins</a></p>
+    </section>
+  {% endif %}
+
+  {% if active_athletes %}
+    <section class="active-athletes">
+      <h2>Your Athletes ({{ active_athletes|length }})</h2>
+      <div class="athletes-list">
+        {% for athlete_id, athlete in active_athletes %}
+          <div class="athlete-card">
+            <h3>{{ athlete.getDisplayName }}</h3>
+            <p>Email: {{ athlete.mail }}</p>
+            <a href="{{ athlete.toUrl }}" class="btn btn-secondary">View Profile</a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if active_relationships %}
+    <section class="active-relationships">
+      <h2>Your Active Coaching Relationships</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Athlete</th>
+            <th>Start Date</th>
+            <th>Program</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for relationship in active_relationships %}
+            <tr>
+              <td>{{ relationship.getAthlete.getDisplayName }}</td>
+              <td>{{ relationship.start_date.value|date('M d, Y') }}</td>
+              <td>{% if relationship.getProgram %}{{ relationship.getProgram.label }}{% endif %}</td>
+              <td>{{ relationship.status.value }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  {% endif %}
+</div>

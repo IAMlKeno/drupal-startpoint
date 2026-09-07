@@ -1,0 +1,19 @@
+swc.athlete_dashboard:
+  path: '/dashboard'
+  defaults:
+    _controller: '\Drupal\swc\Controller\AthleteController::dashboard'
+    _title: 'My Dashboard'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE
+
+swc.coach_dashboard:
+  path: '/admin/swc/coach-dashboard'
+  defaults:
+    _controller: '\Drupal\swc\Controller\CoachController::dashboard'
+    _title: 'Coach Dashboard'
+  requirements:
+    _role: 'coach'
+  options:
+    _admin_route: TRUE
