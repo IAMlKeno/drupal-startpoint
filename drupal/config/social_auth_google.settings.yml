@@ -1,5 +1,5 @@
 client_id: ''
 client_secret: ''
-authorized_redirect_uris: 'swc.squatwithconfidence.ca/auth/login/google/callback'
+authorized_redirect_uris: swc.squatwithconfidence.ca/auth/login/google/callback
 associate_existing_users: true
 account_linking_enabled: true

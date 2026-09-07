@@ -8,11 +8,13 @@ id: user.field_current_squat_1rm
 field_name: field_current_squat_1rm
 entity_type: user
 type: integer
-settings: {}
+settings:
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1
 translatable: true
-indexes: {}
+indexes: {  }
 persist_with_no_fields: false
 custom_storage: false

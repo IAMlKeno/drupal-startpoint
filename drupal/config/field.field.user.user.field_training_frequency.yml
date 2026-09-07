@@ -14,15 +14,7 @@ label: 'Training Frequency'
 description: 'How many days per week do you train'
 required: false
 translatable: false
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_values:
-    '1': '1 day/week'
-    '2': '2 days/week'
-    '3': '3 days/week'
-    '4': '4 days/week'
-    '5': '5 days/week'
-    '6': '6 days/week'
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string

@@ -1,5 +1,5 @@
 app_id: ''
 app_secret: ''
-authorized_redirect_uris: 'swc.squatwithconfidence.ca/auth/login/facebook/callback'
+authorized_redirect_uris: swc.squatwithconfidence.ca/auth/login/facebook/callback
 associate_existing_users: true
 account_linking_enabled: true

@@ -1,6 +1,6 @@
 team_id: ''
 key_id: ''
 client_secret: ''
-authorized_redirect_uris: 'swc.squatwithconfidence.ca/auth/login/apple/callback'
+authorized_redirect_uris: swc.squatwithconfidence.ca/auth/login/apple/callback
 associate_existing_users: true
 account_linking_enabled: true

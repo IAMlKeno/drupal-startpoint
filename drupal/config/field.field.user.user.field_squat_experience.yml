@@ -14,13 +14,7 @@ label: 'Squat Experience'
 description: 'Years of squat experience'
 required: false
 translatable: false
-default_value: []
+default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_values:
-    never: Never
-    beginner: Beginner (0-1 years)
-    intermediate: Intermediate (1-3 years)
-    advanced: Advanced (3+ years)
-  allowed_values_function: ''
+settings: {  }
 field_type: list_string
