@@ -1,0 +1,19 @@
+uuid: 550e8400-e29b-41d4-a716-446655440404
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sets
+    - paragraphs.paragraphs_type.workout_exercise
+id: paragraph.workout_exercise.field_sets
+field_name: field_sets
+entity_type: paragraph
+bundle: workout_exercise
+label: Sets
+description: 'Number of sets'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: integer

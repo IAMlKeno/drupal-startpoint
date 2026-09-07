@@ -1,0 +1,21 @@
+uuid: 550e8400-e29b-41d4-a716-446655440304
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exercise_instructions
+    - node.type.exercise
+  module:
+    - text
+id: node.exercise.field_exercise_instructions
+field_name: field_exercise_instructions
+entity_type: node
+bundle: exercise
+label: Instructions
+description: 'How to perform the exercise'
+required: false
+translatable: true
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: text_long

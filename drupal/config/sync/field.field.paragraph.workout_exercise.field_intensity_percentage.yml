@@ -1,0 +1,19 @@
+uuid: 550e8400-e29b-41d4-a716-446655440408
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intensity_percentage
+    - paragraphs.paragraphs_type.workout_exercise
+id: paragraph.workout_exercise.field_intensity_percentage
+field_name: field_intensity_percentage
+entity_type: paragraph
+bundle: workout_exercise
+label: 'Intensity %'
+description: 'Intensity as percentage of 1RM (e.g., 75)'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: integer

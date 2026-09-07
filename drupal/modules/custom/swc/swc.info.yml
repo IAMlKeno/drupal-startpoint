@@ -18,4 +18,3 @@ dependencies:
 
 entity_types:
   - challenge_enrollment
-  - workout_session

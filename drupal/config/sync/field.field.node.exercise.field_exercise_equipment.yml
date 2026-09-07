@@ -1,0 +1,30 @@
+uuid: 550e8400-e29b-41d4-a716-446655440308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exercise_equipment
+    - node.type.exercise
+  module:
+    - options
+id: node.exercise.field_exercise_equipment
+field_name: field_exercise_equipment
+entity_type: node
+bundle: exercise
+label: Equipment
+description: 'Required equipment'
+required: false
+translatable: true
+default_value: []
+default_value_callback: ''
+settings:
+  allowed_values:
+    barbell: Barbell
+    dumbbell: Dumbbell
+    kettlebell: Kettlebell
+    resistance_band: Resistance Band
+    machine: Machine
+    bodyweight: Bodyweight
+    cable: Cable
+  allowed_values_function: ''
+field_type: list_string

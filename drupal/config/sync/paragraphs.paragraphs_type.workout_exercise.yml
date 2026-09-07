@@ -1,0 +1,8 @@
+uuid: 550e8400-e29b-41d4-a716-446655440400
+langcode: en
+status: true
+dependencies: {}
+id: workout_exercise
+label: 'Workout Exercise'
+description: 'Exercise with prescription data (sets, reps, intensity)'
+behavior_plugins: {}

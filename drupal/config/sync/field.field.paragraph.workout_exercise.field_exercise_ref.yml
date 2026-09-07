@@ -1,0 +1,26 @@
+uuid: 550e8400-e29b-41d4-a716-446655440402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_exercise_ref
+    - paragraphs.paragraphs_type.workout_exercise
+  module:
+    - core
+id: paragraph.workout_exercise.field_exercise_ref
+field_name: field_exercise_ref
+entity_type: paragraph
+bundle: workout_exercise
+label: Exercise
+description: 'Exercise to perform'
+required: true
+translatable: false
+default_value: []
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      exercise: exercise
+    auto_create: false
+field_type: entity_reference

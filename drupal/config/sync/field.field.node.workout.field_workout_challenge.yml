@@ -1,0 +1,26 @@
+uuid: 550e8400-e29b-41d4-a716-446655440312
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workout_challenge
+    - node.type.workout
+  module:
+    - core
+id: node.workout.field_workout_challenge
+field_name: field_workout_challenge
+entity_type: node
+bundle: workout
+label: Challenge
+description: 'Challenge this workout belongs to'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      challenge: challenge
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 550e8400-e29b-41d4-a716-446655440406
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reps
+    - paragraphs.paragraphs_type.workout_exercise
+id: paragraph.workout_exercise.field_reps
+field_name: field_reps
+entity_type: paragraph
+bundle: workout_exercise
+label: Reps
+description: 'Number of repetitions per set'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: integer

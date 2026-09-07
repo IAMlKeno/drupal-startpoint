@@ -1,0 +1,32 @@
+uuid: 550e8400-e29b-41d4-a716-446655440306
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exercise_primary_muscle
+    - node.type.exercise
+  module:
+    - options
+id: node.exercise.field_exercise_primary_muscle
+field_name: field_exercise_primary_muscle
+entity_type: node
+bundle: exercise
+label: 'Primary Muscle Group'
+description: 'Primary muscle group targeted'
+required: false
+translatable: true
+default_value: []
+default_value_callback: ''
+settings:
+  allowed_values:
+    quadriceps: Quadriceps
+    glutes: Glutes
+    hamstrings: Hamstrings
+    chest: Chest
+    back: Back
+    shoulders: Shoulders
+    triceps: Triceps
+    biceps: Biceps
+    core: Core
+  allowed_values_function: ''
+field_type: list_string
