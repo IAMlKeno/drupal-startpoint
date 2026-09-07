@@ -1,0 +1,25 @@
+uuid: 550e8400-e29b-41d4-a716-446655440031
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_training_experience
+  module:
+    - options
+id: user.user.field_training_experience
+field_name: field_training_experience
+entity_type: user
+bundle: user
+label: 'Training Experience'
+description: 'Years of training experience'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings:
+  allowed_values:
+    beginner: Beginner (0-1 years)
+    intermediate: Intermediate (1-3 years)
+    advanced: Advanced (3+ years)
+  allowed_values_function: ''
+field_type: list_string

@@ -1,0 +1,28 @@
+uuid: 550e8400-e29b-41d4-a716-446655440035
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_training_frequency
+  module:
+    - options
+id: user.user.field_training_frequency
+field_name: field_training_frequency
+entity_type: user
+bundle: user
+label: 'Training Frequency'
+description: 'How many days per week do you train'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings:
+  allowed_values:
+    '1': '1 day/week'
+    '2': '2 days/week'
+    '3': '3 days/week'
+    '4': '4 days/week'
+    '5': '5 days/week'
+    '6': '6 days/week'
+  allowed_values_function: ''
+field_type: list_string

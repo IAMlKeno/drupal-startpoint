@@ -1,0 +1,15 @@
+name: Squat With Confidence
+description: Core business logic and functionality for Squat With Confidence application
+type: module
+core_version_requirement: ^11.0
+version: 1.0.0
+
+dependencies:
+  - drupal:user
+  - drupal:node
+  - drupal:field
+  - drupal:entity
+  - drupal:views
+  - drupal:paragraphs
+  - social_auth:social_auth
+  - registration_role:registration_role

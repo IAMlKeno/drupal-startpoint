@@ -1,0 +1,27 @@
+uuid: 550e8400-e29b-41d4-a716-446655440037
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_equipment_access
+  module:
+    - options
+id: user.user.field_equipment_access
+field_name: field_equipment_access
+entity_type: user
+bundle: user
+label: 'Equipment Access'
+description: 'What equipment do you have access to'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings:
+  allowed_values:
+    barbell: Barbell
+    squat_rack: Squat Rack
+    dumbbell: Dumbbell
+    resistance_band: Resistance Band
+    bodyweight: Bodyweight Only
+  allowed_values_function: ''
+field_type: list_string

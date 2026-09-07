@@ -1,0 +1,20 @@
+uuid: 550e8400-e29b-41d4-a716-446655440013
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_last_name
+  module:
+    - text
+id: user.user.field_last_name
+field_name: field_last_name
+entity_type: user
+bundle: user
+label: 'Last Name'
+description: "Athlete's last name"
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: string

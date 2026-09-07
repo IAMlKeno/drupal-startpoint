@@ -1,0 +1,18 @@
+uuid: 550e8400-e29b-41d4-a716-446655440021
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_current_squat_1rm
+id: user.user.field_current_squat_1rm
+field_name: field_current_squat_1rm
+entity_type: user
+bundle: user
+label: 'Current Squat 1RM (lbs)'
+description: 'Athlete current one rep max squat in pounds'
+required: false
+translatable: false
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: integer

@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Squat With Confidence core module.
+ *
+ * Implements business logic for the SWC coaching platform.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function swc_form_alter(&$form, &$form_state, $form_id) {
+  // Register form modifications
+  if ($form_id === 'user_register_form') {
+    // Add custom validation for registration
+    $form['#validate'][] = 'swc_user_register_validate';
+  }
+}
+
+/**
+ * Custom validation for user registration.
+ */
+function swc_user_register_validate(&$form, &$form_state) {
+  // Validation logic can be added here
+}

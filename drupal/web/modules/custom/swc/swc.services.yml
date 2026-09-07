@@ -1,0 +1,29 @@
+services:
+  swc.account_linker:
+    class: Drupal\swc\Service\AccountLinkingService
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.channel.swc'
+
+  swc.progress_calculator:
+    class: Drupal\swc\Service\ProgressCalculatorService
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.channel.swc'
+
+  swc.permission_checker:
+    class: Drupal\swc\Service\PermissionCheckerService
+    arguments:
+      - '@current_user'
+      - '@entity_type.manager'
+      - '@logger.channel.swc'
+
+  swc.enrollment_validator:
+    class: Drupal\swc\Service\EnrollmentValidatorService
+    arguments:
+      - '@entity_type.manager'
+      - '@logger.channel.swc'
+
+  logger.channel.swc:
+    parent: logger.channel_base
+    arguments: ['swc']
