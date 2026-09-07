@@ -10,6 +10,11 @@ dependencies:
   - drupal:field
   - drupal:entity
   - drupal:views
+  - drupal:datetime
+  - drupal:options
   - drupal:paragraphs
   - social_auth:social_auth
   - registration_role:registration_role
+
+entity_types:
+  - challenge_enrollment

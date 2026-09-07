@@ -24,3 +24,37 @@ function swc_form_alter(&$form, &$form_state, $form_id) {
 function swc_user_register_validate(&$form, &$form_state) {
   // Validation logic can be added here
 }
+
+/**
+ * Implements hook_entity_presave().
+ */
+function swc_entity_presave($entity) {
+  // Validate challenge enrollment before saving
+  if ($entity->getEntityTypeId() === 'challenge_enrollment') {
+    $enrollment_validator = \Drupal::service('swc.enrollment_validator');
+    $validation = $enrollment_validator->validateEnrollment(
+      $entity->getAthlete(),
+      $entity->getChallenge()
+    );
+
+    if (!$validation['allowed']) {
+      throw new \Exception($validation['reason']);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function swc_entity_insert($entity) {
+  // Log enrollment events for funnel tracking
+  if ($entity->getEntityTypeId() === 'challenge_enrollment') {
+    \Drupal::logger('swc')->info(
+      'Athlete @athlete enrolled in challenge @challenge',
+      [
+        '@athlete' => $entity->getAthlete()->getDisplayName(),
+        '@challenge' => $entity->getChallenge()->label(),
+      ]
+    );
+  }
+}

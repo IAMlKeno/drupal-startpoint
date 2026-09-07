@@ -1,0 +1,11 @@
+uuid: 550e8400-e29b-41d4-a716-446655440100
+langcode: en
+status: true
+dependencies: {}
+name: Challenge
+type: challenge
+description: 'A training challenge (e.g., Squatober 2026)'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

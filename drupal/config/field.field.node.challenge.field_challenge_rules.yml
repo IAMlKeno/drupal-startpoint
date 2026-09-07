@@ -1,0 +1,21 @@
+uuid: 550e8400-e29b-41d4-a716-446655440110
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenge_rules
+    - node.type.challenge
+  module:
+    - text
+id: node.challenge.field_challenge_rules
+field_name: field_challenge_rules
+entity_type: node
+bundle: challenge
+label: 'Rules'
+description: 'Challenge rules and requirements'
+required: false
+translatable: true
+default_value: []
+default_value_callback: ''
+settings: {}
+field_type: text_long
