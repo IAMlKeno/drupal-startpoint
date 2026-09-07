@@ -20,6 +20,7 @@ services:
       - ./drupal/composer.json:/opt/drupal/composer.json
       - ./drupal/composer.lock:/opt/drupal/composer.lock
       - ./drupal/settings.local.php:/opt/drupal/web/sites/default/settings.local.php
+      - ./drupal/settings.php:/opt/drupal/web/sites/default/settings.php
     networks:
       - swc-network
   db:

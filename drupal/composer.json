@@ -28,10 +28,10 @@
         "drupal/registration_role": "^2.0",
         "drupal/simple_sitemap": "^4.2",
         "drupal/single_content_sync": "^1.4",
-        "drupal/social_auth": "^2.3",
-        "drupal/social_auth_google": "^3.3",
-        "drupal/social_auth_apple": "^1.4",
-        "drupal/social_auth_facebook": "^3.1",
+        "drupal/social_auth": "^4.1",
+        "drupal/social_auth_google": "^4.0",
+        "drupal/social_auth_apple": "^2.0",
+        "drupal/social_auth_facebook": "^4.0",
         "drupal/stripe_webform": "^2.0",
         "drupal/views_data_export": "^1.10",
         "drupal/webform": "^6.3",
@@ -41,18 +41,19 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-recipe-unpack": true,
-            "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-recipe-unpack": true,
             "php-http/discovery": true,
-            "php-tuf/composer-integration": true
+            "php-tuf/composer-integration": true,
+            "phpstan/extension-installer": true,
+            "symfony/runtime": true
         },
         "sort-packages": true
     },
