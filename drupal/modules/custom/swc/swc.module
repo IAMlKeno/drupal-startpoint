@@ -86,3 +86,32 @@ function swc_video_submission_insert($entity) {
     ['@athlete' => $entity->getAthlete()->getDisplayName()]
   );
 }
+
+/**
+ * Implements hook_entity_insert() for coaching relationships.
+ */
+function swc_coaching_relationship_insert($entity) {
+  \Drupal::logger('swc')->info(
+    'Coaching relationship created: @athlete with coach @coach (status: @status)',
+    [
+      '@athlete' => $entity->getAthlete()->getDisplayName(),
+      '@coach' => $entity->getCoach()->getDisplayName(),
+      '@status' => $entity->get('status')->value,
+    ]
+  );
+}
+
+/**
+ * Implements hook_entity_update() for coaching relationships.
+ */
+function swc_coaching_relationship_update($entity) {
+  $original_status = $entity->original->get('status')->value ?? '';
+  $new_status = $entity->get('status')->value;
+
+  if ($original_status !== $new_status && $new_status === 'active') {
+    \Drupal::logger('swc')->info(
+      'Coaching relationship activated for @athlete',
+      ['@athlete' => $entity->getAthlete()->getDisplayName()]
+    );
+  }
+}

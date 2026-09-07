@@ -21,3 +21,4 @@ entity_types:
   - video_submission
   - challenge_enrollment
   - workout_session
+  - coaching_relationship
