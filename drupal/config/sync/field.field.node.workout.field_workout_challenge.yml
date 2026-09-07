@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_workout_challenge
     - node.type.workout
-  module:
-    - core
 id: node.workout.field_workout_challenge
 field_name: field_workout_challenge
 entity_type: node
