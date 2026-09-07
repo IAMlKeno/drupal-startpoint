@@ -1,0 +1,114 @@
+uuid: 550e8400-e29b-41d4-a716-446655440500
+langcode: en
+status: true
+dependencies:
+  module:
+    - swc
+id: athlete_challenges
+label: 'Athlete Challenges'
+module: views
+description: 'View athlete challenge enrollments'
+tag: ''
+base_table: challenge_enrollment
+base_field: id
+core: true
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: role
+        options:
+          role:
+            authenticated: authenticated
+      cache:
+        type: tag
+        options: {}
+      query:
+        type: views_query
+        options: {}
+      exposed_form:
+        type: basic
+        options: {}
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+      style:
+        type: table
+        options:
+          grouping: []
+          row_class: ''
+          default_row_class: true
+          columns:
+            challenge: challenge
+            status: status
+            joined_date: joined_date
+            current_squat_1rm: current_squat_1rm
+          default: joined_date
+          info:
+            challenge:
+              sortable: true
+              default_sort_order: asc
+            status:
+              sortable: true
+              default_sort_order: asc
+            joined_date:
+              sortable: true
+              default_sort_order: desc
+            current_squat_1rm:
+              sortable: true
+              default_sort_order: asc
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+      row:
+        type: fields
+        options: {}
+      fields:
+        challenge:
+          id: challenge
+          table: challenge_enrollment
+          field: challenge
+          type: entity_reference_label
+          settings:
+            link: true
+          label: Challenge
+        status:
+          id: status
+          table: challenge_enrollment
+          field: status
+          type: string
+          label: Status
+        joined_date:
+          id: joined_date
+          table: challenge_enrollment
+          field: joined_date
+          type: datetime_default
+          settings:
+            format_type: short
+          label: 'Joined Date'
+        current_squat_1rm:
+          id: current_squat_1rm
+          table: challenge_enrollment
+          field: current_squat_1rm
+          type: number_integer
+          label: 'Current Squat 1RM'
+      filters: {}
+  page:
+    display_plugin: page
+    id: page
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {}
+      path: athlete-challenges
+      menu:
+        type: tab
+        title: 'Athlete Challenges'
+        expanded: false
+        weight: 0
