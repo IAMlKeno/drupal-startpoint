@@ -5,6 +5,31 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\user\UserInterface;
 
+/**
+ * Defines the Coaching Relationship entity.
+ *
+ * Links athlete to assigned coach with status lifecycle.
+ *
+ * @ContentEntityType(
+ *   id = "coaching_relationship",
+ *   label = @Translation("Coaching Relationship"),
+ *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "list_builder" = "Drupal\swc\Entity\CoachingRelationshipListBuilder",
+ *     "form" = {
+ *       "default" = "Drupal\swc\Form\CoachingRelationshipForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *     },
+ *     "access" = "Drupal\swc\Access\CoachingRelationshipAccessControlHandler",
+ *   },
+ *   base_table = "coaching_relationship",
+ *   fieldable = TRUE,
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "uuid" = "uuid",
+ *   },
+ * )
+ */
 class CoachingRelationship extends ContentEntityBase {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
