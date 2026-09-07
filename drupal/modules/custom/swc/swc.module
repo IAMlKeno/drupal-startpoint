@@ -66,3 +66,23 @@ function swc_entity_insert($entity) {
     );
   }
 }
+
+/**
+ * Implements hook_entity_insert() for check-ins.
+ */
+function swc_check_in_insert($entity) {
+  \Drupal::logger('swc')->info(
+    'Athlete @athlete submitted check-in',
+    ['@athlete' => $entity->getAthlete()->getDisplayName()]
+  );
+}
+
+/**
+ * Implements hook_entity_insert() for video submissions.
+ */
+function swc_video_submission_insert($entity) {
+  \Drupal::logger('swc')->info(
+    'Athlete @athlete submitted video for review',
+    ['@athlete' => $entity->getAthlete()->getDisplayName()]
+  );
+}
