@@ -20,9 +20,8 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          permission: 'view own challenge enrollment'
+        type: none
+        options: {}
       cache:
         type: tag
       query:
@@ -101,7 +100,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
           type: number_integer
           settings:
             thousand_separator: ''
@@ -224,45 +222,11 @@ display:
           delta_offset: 0
           delta_reversed: false
           format_plural: false
-      filters:
-        athlete:
-          id: athlete
-          table: challenge_enrollment
-          field: athlete
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            - current_user
-          group: 1
-          exposed: false
-          expose:
-            operator_id: athlete_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: athlete_op
-            identifier: athlete
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: []
-            group_items: []
-          entity_type: challenge_enrollment
-          entity_field: athlete
+      filters: {}
+      argument_default:
+        current_user_uid:
+          id: current_user_uid
+      exposed_form_options: {}
   page:
     display_plugin: page
     id: page
@@ -271,6 +235,40 @@ display:
     display_options:
       display_extenders: {}
       path: my-challenges
+      arguments:
+        athlete:
+          id: athlete
+          table: challenge_enrollment
+          field: athlete
+          relationship: none
+          group_type: group
+          admin_label: 'Athlete (Current User)'
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_action: access denied
+          default_argument_type: current_user
+          default_argument_options:
+            user: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            id: summary_options
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          break_phrase: false
+          add_comma: false
       menu:
         type: tab
         title: 'My Challenges'
