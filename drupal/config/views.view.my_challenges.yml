@@ -20,8 +20,10 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {}
+        type: role
+        options:
+          role:
+            authenticated: authenticated
       cache:
         type: tag
       query:
@@ -44,11 +46,11 @@ display:
             status: status
             joined_date: joined_date
             current_squat_1rm: current_squat_1rm
-          default: id
+          default: joined_date
           info:
             id:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -66,7 +68,7 @@ display:
               empty_column: false
             joined_date:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -83,34 +85,6 @@ display:
       row:
         type: fields
       fields:
-        id:
-          id: id
-          table: challenge_enrollment
-          field: id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Enrollment ID'
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: []
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          format_plural: false
         challenge:
           id: challenge
           table: challenge_enrollment
@@ -130,7 +104,7 @@ display:
           hide_alter_empty: true
           type: entity_reference_label
           settings:
-            link: false
+            link: true
           group_column: target_id
           group_columns: []
           group_rows: true
@@ -184,7 +158,7 @@ display:
           hide_alter_empty: true
           type: datetime_default
           settings:
-            format_type: medium
+            format_type: short
             custom_date_format: ''
             timezone: ''
           group_column: value
@@ -223,10 +197,6 @@ display:
           delta_reversed: false
           format_plural: false
       filters: {}
-      argument_default:
-        current_user_uid:
-          id: current_user_uid
-      exposed_form_options: {}
   page:
     display_plugin: page
     id: page
@@ -235,40 +205,6 @@ display:
     display_options:
       display_extenders: {}
       path: my-challenges
-      arguments:
-        athlete:
-          id: athlete
-          table: challenge_enrollment
-          field: athlete
-          relationship: none
-          group_type: group
-          admin_label: 'Athlete (Current User)'
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_action: access denied
-          default_argument_type: current_user
-          default_argument_options:
-            user: false
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            id: summary_options
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          break_phrase: false
-          add_comma: false
       menu:
         type: tab
         title: 'My Challenges'
