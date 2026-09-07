@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - swc
+id: coaching_relationship.status
+field_name: status
+entity_type: coaching_relationship
+type: list_string
+settings:
+  allowed_values:
+    - prospect
+    - assessment
+    - active
+    - paused
+    - completed
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: []
+persist_with_no_value: false
+custom_storage: false
