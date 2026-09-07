@@ -17,4 +17,7 @@ dependencies:
   - registration_role:registration_role
 
 entity_types:
+  - check_in
+  - video_submission
   - challenge_enrollment
+  - workout_session
