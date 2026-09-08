@@ -10,7 +10,10 @@ field_name: field_challenge_status
 entity_type: node
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: active
+      label: Active
   allowed_values_function: ''
 module: options
 locked: false

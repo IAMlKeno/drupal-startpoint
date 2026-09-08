@@ -7,7 +7,7 @@ _core:
   default_config_hash: VBBqUKODPLVq7ZrRKPJ4mNwQJgOVY6PZ0BRKwjBuLXs
 id: coaching_relationship
 label: 'Coaching Relationship'
-class: 'Drupal\swc\Entity\CoachingRelationship'
+class: Drupal\swc\Entity\CoachingRelationship
 group: content
 group_label: Content
 base_table: coaching_relationship
@@ -30,5 +30,5 @@ entity_keys:
   owner: ''
   uid: ''
   revision: ''
-revision_metadata_keys: {}
+revision_metadata_keys: {  }
 common_prefix: null

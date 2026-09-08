@@ -9,7 +9,7 @@ field_name: field_challenge_description
 entity_type: node
 type: text_long
 settings: {  }
-module: core
+module: text
 locked: false
 cardinality: 1
 translatable: true
