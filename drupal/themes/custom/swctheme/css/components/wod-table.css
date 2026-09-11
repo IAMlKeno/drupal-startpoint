@@ -1,0 +1,113 @@
+/**
+ * @file
+ * The Workout of the Day logging table.
+ */
+
+.wod-table {
+  background: var(--swc-surface);
+  border-radius: var(--swc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--swc-shadow-card);
+}
+
+.wod-table__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--swc-space-3);
+  padding: var(--swc-space-3) var(--swc-space-4);
+  background: var(--swc-navy);
+}
+.wod-table__progress-track { flex: 1; height: 6px; border-radius: 4px; background: var(--swc-navy-500); overflow: hidden; }
+.wod-table__progress-fill { display: block; height: 6px; border-radius: 4px; background: var(--swc-mint); transition: width 0.3s var(--swc-ease); }
+.wod-table__progress-label { font-size: 0.75rem; font-weight: 600; color: var(--swc-mint); white-space: nowrap; }
+
+.wod-table__grid { table-layout: fixed; }
+
+.wod-table__grid thead th {
+  background: var(--swc-paper-alt);
+  padding: 9px 8px;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--swc-faint);
+  font-weight: 600;
+  text-align: left;
+}
+
+.wod-table__col-set { width: 34px; padding-left: var(--swc-space-4) !important; }
+.wod-table__col-weight { width: 72px; }
+.wod-table__col-rpe { width: 54px; }
+.wod-table__col-done { width: 44px; }
+
+.wod-table__row { border-top: 1px solid #F2F5F7; transition: background 0.15s var(--swc-ease); }
+.wod-table__row.is-complete { background: #F4FAF7; }
+
+.wod-table__row > * { padding: 10px 8px; vertical-align: middle; }
+.wod-table__set { padding-left: var(--swc-space-4) !important; font-size: var(--swc-size-sm); font-weight: 700; text-align: left; }
+.wod-table__target { font-size: 0.75rem; color: var(--swc-muted); font-weight: 500; }
+.wod-table__cell--done { padding-right: var(--swc-space-4) !important; }
+
+.wod-table__input {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #DDE4E9;
+  border-radius: var(--swc-radius-sm);
+  padding: 8px 6px;
+  font-size: var(--swc-size-sm);
+  font-weight: 600;
+  text-align: center;
+  background: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.wod-table__input::placeholder { color: var(--swc-faint); font-weight: 400; }
+.wod-table__input.is-dirty { border-color: var(--swc-green); }
+
+.wod-check {
+  width: 34px; height: 34px;
+  border: 1px solid #DDE4E9;
+  border-radius: 9px;
+  background: #fff;
+  display: grid; place-items: center;
+  transition: background 0.15s var(--swc-ease), border-color 0.15s var(--swc-ease);
+}
+.wod-check__mark {
+  width: 12px; height: 7px;
+  border-left: 2.5px solid #CBD5DC;
+  border-bottom: 2.5px solid #CBD5DC;
+  transform: rotate(-45deg) translate(1px, -2px);
+}
+.wod-check[aria-pressed="true"] { background: var(--swc-green); border-color: var(--swc-green); }
+.wod-check[aria-pressed="true"] .wod-check__mark { border-color: #fff; }
+
+.wod-table__cue {
+  margin: 0;
+  padding: 11px var(--swc-space-4);
+  background: var(--swc-paper-alt);
+  border-top: 1px solid var(--swc-line-soft);
+  font-size: var(--swc-size-xs);
+  color: var(--swc-muted);
+}
+
+.wod-table__save-state {
+  margin: 0;
+  padding: 10px var(--swc-space-4);
+  font-size: var(--swc-size-xs);
+  color: var(--swc-faint);
+  text-align: center;
+}
+.wod-table__save-state.is-saving { color: var(--swc-green); }
+.wod-table__save-state.is-offline { color: var(--swc-warn); }
+
+.wod-notes { margin-top: var(--swc-space-4); }
+.wod-notes textarea {
+  width: 100%;
+  min-height: 76px;
+  resize: vertical;
+  margin-top: 10px;
+  border: 1px solid #DDE4E9;
+  border-radius: 10px;
+  padding: 11px;
+  font-size: var(--swc-size-sm);
+  line-height: 1.5;
+  background: #FCFDFD;
+}

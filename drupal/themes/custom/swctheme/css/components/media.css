@@ -1,0 +1,48 @@
+/**
+ * @file
+ * Media rows: orientation videos and article teasers on the landing page.
+ */
+
+.media-row {
+  display: flex;
+  align-items: center;
+  gap: var(--swc-space-3);
+  background: var(--swc-surface);
+  border-radius: var(--swc-radius-md);
+  padding: 10px;
+}
+
+.media-row__thumb {
+  width: 76px; height: 56px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  object-fit: cover;
+  background: var(--swc-paper-alt);
+  position: relative;
+}
+
+.media-row__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+.media-row__play::before {
+  content: "";
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--swc-navy);
+}
+
+.media-row__title { font-size: var(--swc-size-sm); font-weight: 600; }
+.media-row__meta { font-size: var(--swc-size-xs); color: var(--swc-muted); margin-top: 3px; }
+
+.notice-row { display: flex; gap: var(--swc-space-3); align-items: center; background: var(--swc-surface); border-radius: var(--swc-radius-lg); padding: var(--swc-space-4); }
+.notice-row__badge {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--swc-green); color: #fff;
+  display: grid; place-items: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}

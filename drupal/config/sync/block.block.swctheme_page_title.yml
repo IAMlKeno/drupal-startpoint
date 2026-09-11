@@ -1,0 +1,20 @@
+uuid: 58de78c0-6626-4ebe-a67a-be1f281c483a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - swctheme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: swctheme_page_title
+theme: swctheme
+region: content_above
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

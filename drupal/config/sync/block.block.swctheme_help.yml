@@ -1,0 +1,22 @@
+uuid: df0feeb0-dc94-425e-8468-391eb3e147ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - swctheme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: swctheme_help
+theme: swctheme
+region: content_above
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

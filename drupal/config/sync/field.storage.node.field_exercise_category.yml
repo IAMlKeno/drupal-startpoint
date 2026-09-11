@@ -10,7 +10,10 @@ field_name: field_exercise_category
 entity_type: node
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: free_weight
+      label: 'Free Weight'
   allowed_values_function: ''
 module: options
 locked: false

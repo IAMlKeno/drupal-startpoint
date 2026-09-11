@@ -10,7 +10,28 @@ field_name: field_exercise_equipment
 entity_type: node
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: barbell
+      label: Barbell
+    -
+      value: smith_machine
+      label: 'Smith Machine'
+    -
+      value: buffalo_bar
+      label: 'Buffalo Bar'
+    -
+      value: safety_squat_bar
+      label: 'Safety Squat bar'
+    -
+      value: leg_knee_extension_machine
+      label: 'Leg/Knee Extension Machine'
+    -
+      value: leg_curl_machine
+      label: 'Leg Curl Machine'
+    -
+      value: hack_squat_machine
+      label: 'Hack Squat Machine'
   allowed_values_function: ''
 module: options
 locked: false

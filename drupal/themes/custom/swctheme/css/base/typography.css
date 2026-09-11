@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Type scale and prose defaults.
+ */
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../../fonts/poppins-variable.woff2") format("woff2");
+}
+
+body {
+  font-size: var(--swc-size-sm);
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--swc-space-2);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--swc-ink);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--swc-size-2xl); }
+h2 { font-size: var(--swc-size-xl); }
+h3 { font-size: var(--swc-size-lg); }
+h4 { font-size: var(--swc-size-md); }
+
+p { margin: 0 0 var(--swc-space-3); text-wrap: pretty; }
+
+a { color: var(--swc-green); text-decoration: none; }
+a:hover, a:focus { color: var(--swc-green-dark); text-decoration: underline; }
+
+.eyebrow {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: var(--swc-eyebrow-tracking);
+  text-transform: uppercase;
+  color: var(--swc-green);
+}
+.eyebrow--on-navy { color: var(--swc-mint); }
+
+.section-heading {
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+.text-muted { color: var(--swc-muted); }
+.text-faint { color: var(--swc-faint); }

@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Profile stat tiles. Values count up via js/components/stat-counter.js.
+ */
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--swc-space-3); }
+.stat-grid--compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+
+.stat {
+  background: var(--swc-surface);
+  border-radius: var(--swc-radius-md);
+  padding: var(--swc-space-4);
+}
+.stat--center { text-align: center; padding: 14px 10px; }
+
+.stat__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--swc-ink);
+  font-variant-numeric: tabular-nums;
+}
+.stat--center .stat__value { font-size: 1.375rem; }
+
+.stat__label { font-size: var(--swc-size-xs); color: var(--swc-muted); margin-top: 5px; }
+.stat--center .stat__label { font-size: 0.625rem; margin-top: 2px; }
+.stat__delta { font-size: 0.625rem; font-weight: 600; color: var(--swc-green); margin-top: 6px; }
+
+.profile-head { background: var(--swc-navy); color: #fff; padding: var(--swc-space-4) var(--swc-space-5) var(--swc-space-6); }
+.profile-head__inner { max-width: var(--swc-measure); margin-inline: auto; display: flex; gap: 14px; align-items: center; }
+.profile-head__avatar {
+  width: 62px; height: 62px; border-radius: 50%;
+  background: var(--swc-green);
+  display: grid; place-items: center;
+  font-size: 1.375rem; font-weight: 700;
+}
+.profile-head__name { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.01em; }
+.profile-head__meta { font-size: 0.75rem; color: var(--swc-on-navy); margin-top: 3px; }

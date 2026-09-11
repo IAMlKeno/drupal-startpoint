@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Tested-vs-projected 1RM chart, rendered by js/components/one-rm-chart.js.
+ */
+
+.chart { background: var(--swc-surface); border-radius: var(--swc-radius-lg); padding: var(--swc-space-4); }
+
+.chart__head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--swc-space-3); }
+.chart__current { font-size: var(--swc-size-xl); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.chart__current small { font-size: var(--swc-size-sm); font-weight: 600; color: var(--swc-muted); }
+
+.chart__canvas { margin-top: 14px; display: block; width: 100%; overflow: visible; }
+.chart__gridline { stroke: var(--swc-line-soft); }
+.chart__axis-label { font-size: 8px; fill: var(--swc-faint); font-family: var(--swc-font); }
+
+.chart__line--tested { fill: none; stroke: var(--swc-green); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.chart__line--projected { fill: none; stroke: var(--swc-mint); stroke-width: 2.5; stroke-dasharray: 5 5; stroke-linecap: round; }
+.chart__dot { fill: var(--swc-green); }
+.chart__dot--current { fill: var(--swc-navy); }
+.chart__dot--target { fill: #fff; stroke: var(--swc-mint); stroke-width: 2.5; }
+.chart__callout { font-size: 9px; font-weight: 600; fill: var(--swc-ink); font-family: var(--swc-font); }
+
+.chart__legend { display: flex; gap: var(--swc-space-4); margin-top: var(--swc-space-2); }
+.chart__legend-item { display: flex; align-items: center; gap: 6px; font-size: var(--swc-size-xs); color: var(--swc-muted); }
+.chart__swatch { width: 14px; height: 3px; border-radius: 2px; background: var(--swc-green); }
+.chart__swatch--projected { background: var(--swc-mint); }
+
+/* Draw-in on first paint; respected by prefers-reduced-motion in state.css. */
+.chart__line--tested.is-animating { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: swc-draw 0.8s var(--swc-ease) forwards; }
+@keyframes swc-draw { to { stroke-dashoffset: 0; } }

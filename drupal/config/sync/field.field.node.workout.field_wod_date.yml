@@ -1,0 +1,21 @@
+uuid: 33d4db19-412e-41ae-a2ec-61b8380d7b00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wod_date
+    - node.type.workout
+  module:
+    - datetime
+id: node.workout.field_wod_date
+field_name: field_wod_date
+entity_type: node
+bundle: workout
+label: 'WOD Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,30 @@
+name: Squat with Confidence Theme
+type: theme
+base theme: stable9
+description: 'Athlete portal theme for Squat with Confidence. Mobile-first app shell, JavaScript-biased progressive enhancement.'
+package: Custom
+core_version_requirement: ^10.3 || ^11
+version: 1.0.0
+
+libraries:
+  - swctheme/global
+
+# libraries-override:
+#   core/normalize: swc/base
+
+regions:
+  app_bar: 'App bar'
+  primary_menu: 'Primary menu'
+  hero: 'Hero'
+  highlighted: 'Highlighted'
+  breadcrumb: 'Breadcrumb'
+  content_above: 'Content above'
+  content: 'Content'
+  content_below: 'Content below'
+  sidebar: 'Sidebar'
+  tab_bar: 'Bottom tab bar'
+  footer: 'Footer'
+
+ckeditor5-stylesheets:
+  - css/base/variables.css
+  - css/base/typography.css

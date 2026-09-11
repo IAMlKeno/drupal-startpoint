@@ -1,0 +1,23 @@
+uuid: 26f0bb60-aa0e-4cdd-87eb-91c39ae2b69d
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - swctheme
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: swctheme_search_form_wide
+theme: swctheme
+region: app_bar
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

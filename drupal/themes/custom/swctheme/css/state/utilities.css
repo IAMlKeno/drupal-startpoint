@@ -1,0 +1,14 @@
+/**
+ * @file
+ * A short, deliberately closed set of utilities.
+ */
+
+.u-mt-0 { margin-top: 0 !important; }
+.u-mt-2 { margin-top: var(--swc-space-2) !important; }
+.u-mt-4 { margin-top: var(--swc-space-4) !important; }
+.u-mb-0 { margin-bottom: 0 !important; }
+
+.u-full { width: 100% !important; }
+.u-nowrap { white-space: nowrap; }
+.u-tabular { font-variant-numeric: tabular-nums; }
+.u-center { text-align: center; }

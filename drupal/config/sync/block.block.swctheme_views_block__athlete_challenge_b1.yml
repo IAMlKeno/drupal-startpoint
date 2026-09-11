@@ -1,0 +1,29 @@
+uuid: 02238886-0838-43d9-b78e-41fd5efdc8ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.athlete_challenge
+  module:
+    - system
+    - views
+  theme:
+    - swctheme
+id: swctheme_views_block__athlete_challenge_b1
+theme: swctheme
+region: content_above
+weight: -5
+provider: null
+plugin: 'views_block:athlete_challenge-block_1'
+settings:
+  id: 'views_block:athlete_challenge-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: 1
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/wod\r\n<front>"

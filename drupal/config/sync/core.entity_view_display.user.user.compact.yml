@@ -20,12 +20,20 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: content
+      image_style: thumbnail
       image_loading:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_current_squat_1rm: true
+  field_equipment_access: true
+  field_first_name: true
+  field_last_name: true
+  field_squat_experience: true
+  field_squat_goal: true
+  field_training_experience: true
+  field_training_frequency: true
   member_for: true

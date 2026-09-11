@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Squat with Confidence implementation of page.html.twig.
+ *
+ * App-shell layout: fixed navy app bar, scrolling content column capped to the
+ * mobile measure, fixed bottom tab bar. Olivero's sticky-header toggle, social
+ * bar and multi-column footer are intentionally dropped — this is a portal, not
+ * a marketing site.
+ *
+ * Additional variables provided by swc_preprocess_page():
+ * - is_wod: TRUE on Workout of the Day routes (adds the logging surface class).
+ *
+ * @see swc_preprocess_page()
+ #}
+
+<div class="page-wrapper{{ is_wod ? ' page-wrapper--wod' : '' }}" data-swc-app>
+
+  {% if page.app_bar or page.primary_menu %}
+    <header class="app-bar" data-swc-app-bar>
+      <div class="app-bar__inner">
+        <a class="app-bar__brand" href="{{ front_page }}" rel="home">
+          <span class="app-bar__mark" aria-hidden="true">SC</span>
+          <span class="app-bar__name">{{ 'Squat with Confidence'|t }}</span>
+        </a>
+
+        {# {{ page.app_bar }} #}
+
+        {% if page.primary_menu %}
+          <button class="app-bar__menu-toggle"
+                  type="button"
+                  data-swc-menu-toggle
+                  aria-controls="app-bar-nav"
+                  aria-expanded="false">
+            <span class="visually-hidden">{{ 'Menu'|t }}</span>
+            <span class="app-bar__menu-icon" aria-hidden="true"></span>
+          </button>
+          <nav id="app-bar-nav" class="app-bar__nav" data-swc-nav>
+            {{ page.primary_menu }}
+          </nav>
+        {% endif %}
+      </div>
+
+      {% if page.hero %}
+        <div class="app-bar__hero">
+          {{ page.hero }}
+        </div>
+      {% endif %}
+    </header>
+  {% endif %}
+
+  <main id="main-content" class="layout-main" tabindex="-1">
+
+    {% if page.highlighted %}
+      <div class="layout-main__highlighted">{{ page.highlighted }}</div>
+    {% endif %}
+
+    <div class="layout-main__container">
+      {{ page.breadcrumb }}
+
+      {% if page.sidebar %}
+        <div class="layout-sidebar-grid">
+          <div class="layout-content">
+            {{ page.content_above }}
+            {{ page.content }}
+          </div>
+          <aside class="layout-sidebar">{{ page.sidebar }}</aside>
+        </div>
+      {% else %}
+        <div class="layout-content">
+          {{ page.content_above }}
+          {{ page.content }}
+        </div>
+      {% endif %}
+
+      {{ page.content_below }}
+    </div>
+  </main>
+
+  {% if page.footer %}
+    <footer class="site-footer">
+      <div class="site-footer__inner">{{ page.footer }}</div>
+    </footer>
+  {% endif %}
+
+  {% if page.tab_bar %}
+    <nav class="tab-bar" data-swc-tab-bar aria-label="{{ 'Athlete sections'|t }}">
+      {{ page.tab_bar }}
+    </nav>
+  {% endif %}
+
+  <div class="scrim" data-swc-scrim hidden></div>
+</div>

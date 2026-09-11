@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * The interactive WOD set table.
+ *
+ * Server-rendered rows carry the prescribed work and any previously logged
+ * values; js/components/wod-logger.js upgrades the inputs to autosaving
+ * controls and keeps the header progress bar in sync.
+ #}
+<div class="wod-table" data-swc-wod="{{ view.args.0|default('current') }}">
+  <div class="wod-table__progress" data-swc-wod-progress>
+    <div class="wod-table__progress-track">
+      <span class="wod-table__progress-fill" data-swc-wod-fill style="width:0%"></span>
+    </div>
+    <span class="wod-table__progress-label" data-swc-wod-count>0/{{ rows|length }} {{ 'sets'|t }}</span>
+  </div>
+
+  <table{{ attributes.addClass('wod-table__grid') }}>
+    <caption class="visually-hidden">{{ caption ?: 'Workout sets'|t }}</caption>
+    <thead>
+      <tr>
+        <th scope="col" class="wod-table__col-set">{{ 'Set'|t }}</th>
+        <th scope="col" class="wod-table__col-target">{{ 'Target'|t }}</th>
+        <th scope="col" class="wod-table__col-weight">{{ 'Weight'|t }}</th>
+        <th scope="col" class="wod-table__col-rpe">{{ 'RPE'|t }}</th>
+        <th scope="col" class="wod-table__col-done"><span class="visually-hidden">{{ 'Complete'|t }}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr class="wod-table__row" data-swc-set="{{ row.columns.set_id.content|default(loop.index) }}">
+          <th scope="row" class="wod-table__set">{{ loop.index }}</th>
+          <td class="wod-table__target">{{ row.columns.target.content }}</td>
+          <td class="wod-table__cell">
+            <input class="wod-table__input" type="text" inputmode="numeric"
+                   name="weight[{{ loop.index }}]"
+                   value="{{ row.columns.weight.content|striptags|trim }}"
+                   placeholder="—"
+                   aria-label="{{ 'Weight for set @n'|t({'@n': loop.index}) }}"
+                   data-swc-field="weight">
+          </td>
+          <td class="wod-table__cell">
+            <input class="wod-table__input wod-table__input--rpe" type="text" inputmode="decimal"
+                   name="rpe[{{ loop.index }}]"
+                   value="{{ row.columns.rpe.content|striptags|trim }}"
+                   placeholder="—"
+                   aria-label="{{ 'RPE for set @n'|t({'@n': loop.index}) }}"
+                   data-swc-field="rpe">
+          </td>
+          <td class="wod-table__cell wod-table__cell--done">
+            <button type="button" class="wod-check" data-swc-field="done" aria-pressed="false">
+              <span class="visually-hidden">{{ 'Mark set @n complete'|t({'@n': loop.index}) }}</span>
+              <span class="wod-check__mark" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if view.header %}
+    <p class="wod-table__cue">{{ view.header }}</p>
+  {% endif %}
+
+  <p class="wod-table__save-state" data-swc-wod-state role="status">{{ 'Autosaved'|t }}</p>
+</div>

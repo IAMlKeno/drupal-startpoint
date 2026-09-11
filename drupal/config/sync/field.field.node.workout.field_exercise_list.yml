@@ -1,0 +1,31 @@
+uuid: 75ce6205-22d0-43db-a70c-1b603b39e60e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exercise_list
+    - node.type.workout
+    - paragraphs.paragraphs_type.workout_exercise
+  module:
+    - entity_reference_revisions
+id: node.workout.field_exercise_list
+field_name: field_exercise_list
+entity_type: node
+bundle: workout
+label: 'Exercise List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      workout_exercise: workout_exercise
+    negate: 0
+    target_bundles_drag_drop:
+      workout_exercise:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

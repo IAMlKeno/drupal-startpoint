@@ -1,0 +1,45 @@
+uuid: 3fe60c28-da23-4f82-9597-53dc61f87d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.workout.field_exercise_list
+    - field.field.node.workout.field_wod_date
+    - field.field.node.workout.field_workout_challenge
+    - field.field.node.workout.field_workout_day_order
+    - node.type.workout
+  module:
+    - datetime
+    - entity_reference_revisions
+    - user
+id: node.workout.default
+targetEntityType: node
+bundle: workout
+mode: default
+content:
+  field_exercise_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_wod_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_workout_challenge: true
+  field_workout_day_order: true

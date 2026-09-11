@@ -1,0 +1,45 @@
+/**
+ * @file
+ * Fixed bottom navigation. Active item synced by js/components/tab-bar.js.
+ */
+
+.tab-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 45;
+  background: var(--swc-surface);
+  border-top: 1px solid var(--swc-line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-bar ul,
+.tab-bar .menu {
+  max-width: var(--swc-measure);
+  margin-inline: auto;
+  list-style: none;
+  padding: 0;
+  margin-block: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.tab-bar a {
+  min-height: 48px;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  padding: 10px 4px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--swc-faint);
+  text-align: center;
+}
+.tab-bar a:hover { text-decoration: none; color: var(--swc-green); }
+
+.tab-bar a.is-active,
+.tab-bar .menu-item--active-trail > a {
+  color: var(--swc-green);
+  font-weight: 600;
+}
+.tab-bar a.is-active::before { content: "●"; font-size: 0.5rem; line-height: 1; }

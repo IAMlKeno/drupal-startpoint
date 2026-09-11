@@ -1,0 +1,41 @@
+/**
+ * @file
+ * Buttons. Primary = the site's green CTA.
+ */
+
+.button,
+.button--primary,
+input[type="submit"].button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--swc-space-2);
+  min-height: 48px;
+  padding: 0 var(--swc-space-5);
+  border-radius: 10px;
+  background: var(--swc-green);
+  color: #fff;
+  font-size: var(--swc-size-md);
+  font-weight: 600;
+  transition: background 0.15s var(--swc-ease), transform 0.08s var(--swc-ease);
+}
+.button:hover { background: var(--swc-green-dark); color: #fff; text-decoration: none; }
+.button:active { transform: translateY(1px); }
+
+.button--block { display: flex; width: 100%; }
+
+.button--secondary {
+  background: transparent;
+  border: 1px solid var(--swc-line);
+  color: var(--swc-ink);
+}
+.button--secondary:hover { background: var(--swc-paper-alt); color: var(--swc-ink); }
+
+.button--ghost-navy {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.button[disabled], .button.is-busy { opacity: 0.6; pointer-events: none; }
+.button.is-done { background: var(--swc-navy); }

@@ -21,6 +21,11 @@ content:
   language:
     weight: 0
     region: content
+  social_auth:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
@@ -32,4 +37,12 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_current_squat_1rm: true
+  field_equipment_access: true
+  field_first_name: true
+  field_last_name: true
+  field_squat_experience: true
+  field_squat_goal: true
+  field_training_experience: true
+  field_training_frequency: true

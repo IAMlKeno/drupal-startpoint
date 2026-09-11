@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Shared state classes used by the JS layer.
+ */
+
+.is-hidden { display: none !important; }
+.is-loading { position: relative; pointer-events: none; }
+.is-loading::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: inherit;
+}
+
+.is-saved-flash { animation: swc-flash 0.9s var(--swc-ease); }
+@keyframes swc-flash {
+  0% { background: var(--swc-green-tint); }
+  100% { background: transparent; }
+}
+
+.has-open-nav { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

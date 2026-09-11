@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Card surfaces — the primary content container across the portal.
+ */
+
+.card {
+  background: var(--swc-surface);
+  border-radius: var(--swc-radius-lg);
+  padding: var(--swc-space-4);
+  box-shadow: var(--swc-shadow-card);
+}
+
+.card--flat { box-shadow: none; }
+.card--tight { padding: var(--swc-space-3); }
+.card--navy {
+  background: var(--swc-navy);
+  color: #fff;
+  box-shadow: none;
+}
+.card--navy h1, .card--navy h2, .card--navy h3 { color: #fff; }
+.card--navy p { color: var(--swc-on-navy); }
+
+.card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--swc-space-3);
+}
+
+.card__title { font-size: var(--swc-size-lg); font-weight: 700; margin: var(--swc-space-2) 0 0; }
+.card__meta { font-size: var(--swc-size-xs); color: var(--swc-muted); }
+
+.card__divider { border: 0; border-top: 1px solid var(--swc-line-soft); margin: var(--swc-space-3) 0; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--swc-space-3); }
+
+.tag {
+  font-size: var(--swc-size-xs);
+  font-weight: 500;
+  color: var(--swc-ink);
+  background: var(--swc-green-tint);
+  border: 1px solid var(--swc-green-line);
+  padding: 5px 10px;
+  border-radius: var(--swc-radius-pill);
+}
+.tag--on-navy {
+  background: transparent;
+  border-color: #35536E;
+  color: var(--swc-mint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.625rem;
+  font-weight: 600;
+}

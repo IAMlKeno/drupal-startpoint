@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Views wrapper styling (see templates/views/views-view.html.twig).
+ */
+
+.view { display: flex; flex-direction: column; gap: var(--swc-space-3); }
+
+.view__title { font-size: var(--swc-size-lg); margin: 0; }
+
+.view__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--swc-space-2);
+  padding-bottom: var(--swc-space-1);
+}
+.view__filters .form-item { margin: 0; }
+.view__filters select,
+.view__filters input[type="text"] {
+  min-height: 40px;
+  border: 1px solid var(--swc-line);
+  border-radius: var(--swc-radius-pill);
+  padding: 0 14px;
+  background: var(--swc-surface);
+  font-size: var(--swc-size-xs);
+}
+/* The JS layer submits on change; hide the fallback button once enhanced. */
+.view.is-enhanced .view__filters .form-actions { display: none; }
+
+.view__content { display: flex; flex-direction: column; gap: var(--swc-space-3); }
+.view--cards .view__content { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--swc-space-3); }
+.view--table .view__content { display: block; }
+
+.view__content[aria-busy="true"] { opacity: 0.55; transition: opacity 0.15s var(--swc-ease); }
+
+.view__empty {
+  padding: var(--swc-space-6) var(--swc-space-4);
+  text-align: center;
+  color: var(--swc-muted);
+  background: var(--swc-surface);
+  border-radius: var(--swc-radius-lg);
+}
+
+.view__pager { display: flex; justify-content: center; padding-top: var(--swc-space-2); }
+.view__pager .pager__items { list-style: none; display: flex; gap: var(--swc-space-2); padding: 0; margin: 0; }
+.view.is-enhanced .view__pager .pager__item:not(.pager__item--next) { display: none; }
+.view.is-enhanced .view__pager a { }

@@ -1,0 +1,74 @@
+global:
+  version: 1.0.0
+  css:
+    theme:
+      css/swc.css: {}
+  js:
+    # ES module: never aggregate (concatenation breaks import specifiers).
+    js/swc-app.js: { attributes: { type: module }, preprocess: false, minified: true }
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings
+
+# Kept so existing attach_library() calls and swctheme.theme keep resolving.
+# Everything now lives in the single stylesheet above.
+wod:
+  version: 1.0.0
+  dependencies:
+    - swctheme/global
+
+profile:
+  version: 1.0.0
+  dependencies:
+    - swctheme/global
+
+
+# base:
+#   version: 1.0.0
+#   css:
+#     base:
+#       css/base/variables.css: {}
+#       css/base/reset.css: {}
+#       css/base/typography.css: {}
+
+# global:
+#   version: 1.0.0
+#   css:
+#     layout:
+#       css/layout/page.css: {}
+#       css/layout/grid.css: {}
+#     component:
+#       css/components/app-bar.css: {}
+#       css/components/tab-bar.css: {}
+#       css/components/card.css: {}
+#       css/components/button.css: {}
+#       css/components/media.css: {}
+#       css/components/view.css: {}
+#     state:
+#       css/state/state.css: {}
+#       css/state/utilities.css: {}
+#   js:
+#     js/swc-app.js: { attributes: { type: module } }
+#   dependencies:
+#     - swc/base
+#     - core/drupal
+#     - core/once
+
+# wod:
+#   version: 1.0.0
+#   css:
+#     component:
+#       css/components/wod-table.css: {}
+#   dependencies:
+#     - swctheme/global
+
+# profile:
+#   version: 1.0.0
+#   css:
+#     component:
+#       css/components/stat.css: {}
+#       css/components/chart.css: {}
+#       css/components/session-list.css: {}
+#   dependencies:
+#     - swctheme/global

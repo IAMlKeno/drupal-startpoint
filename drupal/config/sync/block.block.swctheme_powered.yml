@@ -1,0 +1,22 @@
+uuid: a337acc9-530a-49bd-b999-0abebdb63c4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - swctheme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: swctheme_powered
+theme: swctheme
+region: app_bar
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

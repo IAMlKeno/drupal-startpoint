@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Recent sessions list on the athlete profile.
+ */
+
+.session-list { background: var(--swc-surface); border-radius: var(--swc-radius-lg); overflow: hidden; }
+
+.session-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--swc-space-3);
+  padding: 14px var(--swc-space-4);
+  border-bottom: 1px solid var(--swc-line-soft);
+}
+.session-list__item:last-child { border-bottom: 0; }
+
+.session-list__status {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--swc-green-tint);
+  color: var(--swc-green);
+  font-size: var(--swc-size-sm);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.session-list__status--missed { background: var(--swc-warn-tint); color: var(--swc-warn); }
+
+.session-list__title { font-size: var(--swc-size-sm); font-weight: 600; }
+.session-list__meta { font-size: var(--swc-size-xs); color: var(--swc-muted); }

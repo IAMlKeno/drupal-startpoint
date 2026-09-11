@@ -1,0 +1,49 @@
+uuid: e81c0103-0c4c-470e-88da-414a16f1f0e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.workout_exercise.field_exercise_ref
+    - field.field.paragraph.workout_exercise.field_intensity_percentage
+    - field.field.paragraph.workout_exercise.field_reps
+    - field.field.paragraph.workout_exercise.field_sets
+    - paragraphs.paragraphs_type.workout_exercise
+id: paragraph.workout_exercise.default
+targetEntityType: paragraph
+bundle: workout_exercise
+mode: default
+content:
+  field_exercise_ref:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_intensity_percentage:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_reps:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_sets:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

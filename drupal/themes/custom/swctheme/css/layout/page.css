@@ -1,0 +1,62 @@
+/**
+ * @file
+ * App shell: bar, scrolling column, tab bar.
+ */
+
+.page-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--swc-paper);
+}
+
+.layout-main {
+  flex: 1;
+  padding-bottom: calc(var(--swc-tab-bar-h) + env(safe-area-inset-bottom) + var(--swc-space-5));
+}
+
+.layout-main__container {
+  width: 100%;
+  max-width: var(--swc-measure);
+  margin-inline: auto;
+  padding: var(--swc-space-5) var(--swc-space-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--swc-space-4);
+}
+
+.layout-main__highlighted {
+  max-width: var(--swc-measure);
+  margin-inline: auto;
+  padding: var(--swc-space-4) var(--swc-space-5) 0;
+}
+
+.layout-content { display: flex; flex-direction: column; gap: var(--swc-space-4); }
+
+.site-footer {
+  background: var(--swc-navy);
+  color: var(--swc-on-navy);
+  font-size: var(--swc-size-xs);
+}
+.site-footer__inner {
+  max-width: var(--swc-measure);
+  margin-inline: auto;
+  padding: var(--swc-space-5);
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 36, 57, 0.5);
+  z-index: 40;
+}
+
+/* Tablet and up: the app column centres, the sidebar appears. */
+@media (min-width: 48rem) {
+  :root { --swc-measure: 720px; }
+  .layout-main { padding-bottom: var(--swc-space-7); }
+}
+
+@media (min-width: 64rem) {
+  :root { --swc-measure: 1040px; }
+}
