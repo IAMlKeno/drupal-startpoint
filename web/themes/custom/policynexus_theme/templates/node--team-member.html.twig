@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * Theme override to display a Team Member node.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes.addClass('node', 'node--team-member', 'team-member') }}>
+  {% if page %}
+    <!-- Full page view -->
+    <div class="team-member__hero">
+      {% if content.field_featured_image %}
+        <div class="team-member__image">
+          {{ content.field_featured_image }}
+        </div>
+      {% else %}
+        <div class="team-member__image-placeholder">
+          <div class="team-member__initials">{{ label|first }}</div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="container">
+      <div class="team-member__wrapper">
+        <!-- Main Profile -->
+        <main class="team-member__main">
+          <header class="team-member__header">
+            <h1{{ title_attributes.addClass('team-member__name') }}>{{ label }}</h1>
+            {% if content.field_job_title %}
+              <p class="team-member__title">{{ content.field_job_title }}</p>
+            {% endif %}
+          </header>
+
+          <!-- Bio -->
+          <div class="team-member__bio">
+            {{ content.body }}
+          </div>
+
+          <!-- Research Areas -->
+          {% if content.field_research_area %}
+            <section class="team-member__research">
+              <h2>Research Expertise</h2>
+              <div class="team-member__areas">
+                {{ content.field_research_area }}
+              </div>
+            </section>
+          {% endif %}
+
+          <!-- Contact -->
+          {% if content.field_email or content.field_phone %}
+            <section class="team-member__contact">
+              <h2>Get in Touch</h2>
+              <div class="team-member__contact-info">
+                {% if content.field_email %}
+                  <p>
+                    <strong>Email:</strong>
+                    {{ content.field_email }}
+                  </p>
+                {% endif %}
+                {% if content.field_phone %}
+                  <p>
+                    <strong>Phone:</strong>
+                    {{ content.field_phone }}
+                  </p>
+                {% endif %}
+              </div>
+            </section>
+          {% endif %}
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="team-member__sidebar">
+          <!-- Profile Card -->
+          <div class="card card--featured">
+            {% if content.field_featured_image %}
+              <div class="card__image team-member__card-image">
+                {{ content.field_featured_image }}
+              </div>
+            {% endif %}
+            <h3 class="card__title">{{ label }}</h3>
+            <p class="card__subtitle">{{ content.field_job_title }}</p>
+
+            {% if content.field_email or content.field_phone %}
+              <div class="team-member__card-contact">
+                {% if content.field_email %}
+                  <a href="mailto:{{ content.field_email }}" class="button button--small button--primary">Email</a>
+                {% endif %}
+                {% if content.field_phone %}
+                  <a href="tel:{{ content.field_phone }}" class="button button--small button--secondary">Call</a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- Social Links (if available) -->
+          <div class="card">
+            <h3 class="card__title">Connect</h3>
+            <div class="team-member__social">
+              <a href="#" class="team-member__social-link">LinkedIn</a>
+              <a href="#" class="team-member__social-link">Twitter</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Other Team Members -->
+      <section class="team-member__related">
+        <h2>Meet the Team</h2>
+        <div class="grid grid--4col">
+          <!-- Related team members would render here -->
+        </div>
+      </section>
+    </div>
+  {% else %}
+    <!-- Teaser/Card view -->
+    <div class="card team-member__card">
+      {% if content.field_featured_image %}
+        <div class="card__image team-member__card-image">
+          {{ content.field_featured_image }}
+        </div>
+      {% else %}
+        <div class="team-member__card-placeholder">
+          <div class="team-member__initials">{{ label|first }}</div>
+        </div>
+      {% endif %}
+      <h3{{ title_attributes.addClass('card__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+      {% if content.field_job_title %}
+        <p class="card__subtitle">{{ content.field_job_title }}</p>
+      {% endif %}
+      <a href="{{ url }}" class="button button--small button--secondary">View Profile</a>
+    </div>
+  {% endif %}
+</article>

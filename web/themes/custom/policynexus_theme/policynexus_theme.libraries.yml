@@ -3,6 +3,8 @@ global:
     base:
       css/global.css: {}
       css/layouts.css: {}
+      css/components/animations.css: {}
+      css/components/hero-overlay.css: {}
     component:
       css/components/button.css: {}
       css/components/card.css: {}
@@ -13,5 +15,7 @@ global:
       css/components/research-post.css: {}
       css/components/policy.css: {}
       css/components/community-story.css: {}
+      css/components/faq.css: {}
+      css/components/team-member.css: {}
   js:
     js/theme.js: {}

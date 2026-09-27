@@ -1,0 +1,185 @@
+/* Hero Image Overlays and Effects */
+
+/* Base hero section with overlay */
+.hero-with-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 40, 68, 0.6), rgba(59, 154, 159, 0.3));
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hero-with-overlay:hover::before {
+  opacity: 0.8;
+}
+
+.hero-with-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero section with text overlay */
+.hero-text-overlay {
+  position: relative;
+  padding: var(--spacing-xl);
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  min-height: 300px;
+}
+
+.hero-text-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(26, 40, 68, 0.8), transparent);
+  z-index: 1;
+}
+
+.hero-text-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text-overlay h1 {
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.hero-text-overlay p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Image zoom effect */
+.image-zoom {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-zoom img {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Parallax effect for hero images */
+.hero-parallax {
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Dark overlay for text contrast */
+.overlay-dark {
+  position: relative;
+}
+
+.overlay-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 40, 68, 0.7);
+  z-index: 1;
+}
+
+.overlay-dark > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Light overlay for text contrast */
+.overlay-light {
+  position: relative;
+}
+
+.overlay-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.overlay-light > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient overlay (secondary color) */
+.overlay-gradient-secondary {
+  position: relative;
+}
+
+.overlay-gradient-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 154, 159, 0.5), rgba(212, 165, 116, 0.3));
+  z-index: 1;
+}
+
+.overlay-gradient-secondary > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient overlay (accent color) */
+.overlay-gradient-accent {
+  position: relative;
+}
+
+.overlay-gradient-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.6), rgba(59, 154, 159, 0.2));
+  z-index: 1;
+}
+
+.overlay-gradient-accent > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile specific - disable parallax */
+@media (max-width: 767px) {
+  .hero-parallax {
+    background-attachment: scroll;
+  }
+}

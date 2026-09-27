@@ -1,0 +1,96 @@
+{#
+/**
+ * @file
+ * Theme override to display an FAQ node.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes.addClass('node', 'node--faq', 'faq') }}>
+  {% if page %}
+    <!-- Full page view -->
+    <div class="container">
+      <div class="faq__wrapper">
+        <div class="faq__breadcrumb">
+          <a href="/">Home</a> / <a href="/faq">Frequently Asked Questions</a>
+        </div>
+
+        <main class="faq__content">
+          <h1{{ title_attributes.addClass('faq__title') }}>{{ label }}</h1>
+
+          <!-- FAQ Body -->
+          <div class="faq__answer">
+            {{ content.body }}
+          </div>
+
+          <!-- Category -->
+          {% if content.field_faq_category %}
+            <div class="faq__category">
+              <strong>Category:</strong> {{ content.field_faq_category }}
+            </div>
+          {% endif %}
+
+          <!-- Related Policies -->
+          {% if content.field_related_policies %}
+            <section class="faq__related-policies">
+              <h2>Related Policies</h2>
+              <div class="grid grid--2col">
+                {{ content.field_related_policies }}
+              </div>
+            </section>
+          {% endif %}
+
+          <!-- Navigation -->
+          <nav class="faq__nav">
+            <a href="/faq" class="button button--secondary">Back to FAQ</a>
+          </nav>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="faq__sidebar">
+          <!-- Quick Links -->
+          <div class="card card--featured">
+            <h3 class="card__title">FAQ Categories</h3>
+            <ul class="faq__categories-list">
+              <li><a href="/faq?category=general">General Questions</a></li>
+              <li><a href="/faq?category=policies">About Policies</a></li>
+              <li><a href="/faq?category=community">Community Engagement</a></li>
+              <li><a href="/faq?category=research">Research &amp; Data</a></li>
+            </ul>
+          </div>
+
+          <!-- Search -->
+          <div class="card">
+            <h3 class="card__title">Search FAQs</h3>
+            <form class="faq__search" method="get" action="/faq">
+              <input type="text" name="q" placeholder="Search questions..." class="faq__search-input">
+              <button type="submit" class="button button--small button--primary">Search</button>
+            </form>
+          </div>
+
+          <!-- Contact -->
+          <div class="card">
+            <h3 class="card__title">Can't Find Your Answer?</h3>
+            <p>Contact us with your question.</p>
+            <a href="/contact" class="button button--primary">Get in Touch</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  {% else %}
+    <!-- Teaser/Card view -->
+    <div class="card">
+      <h3{{ title_attributes.addClass('card__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+      <p class="card__content">{{ content.body.0 }}</p>
+      <a href="{{ url }}" class="button button--small button--secondary">Read Answer</a>
+    </div>
+  {% endif %}
+</article>
