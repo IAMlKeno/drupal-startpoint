@@ -1,0 +1,21 @@
+uuid: 665bf627-455c-475a-988e-c6f79887ede6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.athlete.field_current_squat_max
+    - profile.type.athlete
+id: profile.athlete.default
+targetEntityType: profile
+bundle: athlete
+mode: default
+content:
+  field_current_squat_max:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

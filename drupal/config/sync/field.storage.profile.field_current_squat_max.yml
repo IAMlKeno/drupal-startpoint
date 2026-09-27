@@ -1,0 +1,20 @@
+uuid: 03e45c82-b6a8-496a-81b9-037bc4c075da
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_current_squat_max
+field_name: field_current_squat_max
+entity_type: profile
+type: decimal
+settings:
+  precision: 10
+  scale: 1
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

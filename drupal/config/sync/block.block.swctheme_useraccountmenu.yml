@@ -1,0 +1,25 @@
+uuid: 4b02693e-3c35-492a-a431-1710a7e5c230
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - swctheme
+id: swctheme_useraccountmenu
+theme: swctheme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

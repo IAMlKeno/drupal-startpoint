@@ -1,0 +1,23 @@
+uuid: ef403b20-59ea-4114-827e-f6df8f654fd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_current_squat_max
+    - profile.type.athlete
+id: profile.athlete.field_current_squat_max
+field_name: field_current_squat_max
+entity_type: profile
+bundle: athlete
+label: 'Current Squat Max'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

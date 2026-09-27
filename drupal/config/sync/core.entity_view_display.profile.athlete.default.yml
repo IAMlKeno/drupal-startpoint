@@ -1,0 +1,24 @@
+uuid: 4795c105-9fd9-4146-b9bc-f0a52037913d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.athlete.field_current_squat_max
+    - profile.type.athlete
+id: profile.athlete.default
+targetEntityType: profile
+bundle: athlete
+mode: default
+content:
+  field_current_squat_max:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
