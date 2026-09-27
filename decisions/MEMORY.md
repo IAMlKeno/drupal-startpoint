@@ -1,0 +1,1 @@
+- [Decision 009: Page Hero Layout Restructure](decisions/009_page_hero_layout_restructure.md) — Restructured templates to allow full-width hero section
