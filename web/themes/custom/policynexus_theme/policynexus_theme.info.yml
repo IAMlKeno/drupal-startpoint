@@ -1,0 +1,16 @@
+name: PolicyLink Nexus
+description: 'Mobile-first custom theme for PolicyLink Nexus — deep navy/blue, teal accents, professional government aesthetic'
+type: theme
+base theme: olivero
+core_version_requirement: ^11
+version: 1.0.0
+libraries:
+  - policynexus_theme/global
+regions:
+  header: Header
+  primary_menu: 'Primary Menu'
+  hero: Hero
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  footer_menu: 'Footer Menu'

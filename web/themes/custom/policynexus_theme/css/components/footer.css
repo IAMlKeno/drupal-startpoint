@@ -1,0 +1,113 @@
+/* Footer Component */
+.footer {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: var(--spacing-xxl) var(--spacing-md) var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__menu {
+  display: grid;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  grid-template-columns: 1fr;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .footer__menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer__menu-section h3 {
+  color: var(--color-accent);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer__menu-section ul {
+  list-style: none;
+}
+
+.footer__menu-section li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer__menu-section a {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.footer__menu-section a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer__bottom p {
+  font-size: 0.875rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer__social {
+    justify-content: flex-end;
+  }
+}
+
+.footer__social a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.footer__social a:hover {
+  color: var(--color-accent);
+}
+
+/* Copyright */
+.footer__copyright {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}

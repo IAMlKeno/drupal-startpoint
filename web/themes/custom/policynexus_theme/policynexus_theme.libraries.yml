@@ -1,0 +1,13 @@
+global:
+  css:
+    base:
+      css/global.css: {}
+    component:
+      css/components/button.css: {}
+      css/components/card.css: {}
+      css/components/hero.css: {}
+      css/components/header.css: {}
+      css/components/footer.css: {}
+      css/components/comments.css: {}
+  js:
+    js/theme.js: {}

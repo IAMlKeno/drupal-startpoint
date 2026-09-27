@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead
+ * they should be in the html.html.twig template in this directory.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<header class="header" role="banner">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo">
+        {{ site_name }}
+      </div>
+      <nav class="header__nav" role="navigation" aria-label="Main">
+        {{ page.primary_menu }}
+      </nav>
+      <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+{% if page.hero %}
+  <div class="hero">
+    {{ page.hero }}
+  </div>
+{% endif %}
+
+<main class="main-content" role="main">
+  {% if page.content %}
+    <div class="container">
+      {{ page.content }}
+    </div>
+  {% endif %}
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      {% if page.footer %}
+        <div class="footer__menu">
+          {{ page.footer }}
+        </div>
+      {% endif %}
+      <div class="footer__bottom">
+        <p>&copy; {{ "now"|date("Y") }} {{ site_name }}. All rights reserved.</p>
+        <div class="footer__social">
+          <!-- Social links can be added here -->
+        </div>
+      </div>
+      <div class="footer__copyright">
+        {{ "Built with Drupal 11"|t }}
+      </div>
+    </div>
+  </div>
+</footer>

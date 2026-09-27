@@ -1,0 +1,91 @@
+/* Card Component */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--spacing-md);
+  border-radius: 4px;
+}
+
+.card__title {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+.card__subtitle {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.card__content {
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card__footer {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.card__tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card__tag--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.card__tag--secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+/* Featured Card */
+.card--featured {
+  border: 2px solid var(--color-accent);
+  background-color: #fafaf8;
+}
+
+/* Minimal Card (Teaser) */
+.card--minimal {
+  border: none;
+  padding: var(--spacing-sm);
+  background: transparent;
+}
+
+.card--minimal:hover {
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .card {
+    padding: var(--spacing-sm);
+  }
+
+  .card__title {
+    font-size: 1.1rem;
+  }
+}
