@@ -2,6 +2,7 @@ global:
   css:
     base:
       css/global.css: {}
+      css/layouts.css: {}
     component:
       css/components/button.css: {}
       css/components/card.css: {}
@@ -9,5 +10,8 @@ global:
       css/components/header.css: {}
       css/components/footer.css: {}
       css/components/comments.css: {}
+      css/components/research-post.css: {}
+      css/components/policy.css: {}
+      css/components/community-story.css: {}
   js:
     js/theme.js: {}

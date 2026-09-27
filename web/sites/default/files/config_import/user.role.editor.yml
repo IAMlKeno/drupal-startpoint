@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 3
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'view own unpublished content'
+  - 'view any unpublished content'
+  - 'create page content'
+  - 'create research_post content'
+  - 'create community_story content'
+  - 'create policy content'
+  - 'create faq content'
+  - 'create team_member content'
+  - 'edit any page content'
+  - 'edit any research_post content'
+  - 'edit any community_story content'
+  - 'edit any policy content'
+  - 'edit any faq content'
+  - 'edit any team_member content'
+  - 'delete any page content'
+  - 'delete any research_post content'
+  - 'delete any community_story content'
+  - 'delete any policy content'
+  - 'delete any faq content'
+  - 'delete any team_member content'
+  - 'edit taxonomy term in research_areas'
+  - 'create taxonomy term in research_areas'
+  - 'delete taxonomy term in research_areas'
+  - 'edit taxonomy term in policy_categories'
+  - 'create taxonomy term in policy_categories'
+  - 'delete taxonomy term in policy_categories'
+  - 'edit taxonomy term in communities'
+  - 'create taxonomy term in communities'
+  - 'delete taxonomy term in communities'
+  - 'administer comments'
+  - 'access comments'
+  - 'post comments'
+  - 'create comment'
+  - 'edit own comments'
+  - 'delete own comments'

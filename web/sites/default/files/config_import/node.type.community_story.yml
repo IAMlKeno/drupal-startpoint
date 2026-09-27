@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Community Story'
+type: community_story
+description: 'Testimonials, case studies, outcome narratives from community members'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

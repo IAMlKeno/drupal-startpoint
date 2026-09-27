@@ -1,0 +1,117 @@
+{#
+/**
+ * @file
+ * Theme override to display a Policy node with comments.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes.addClass('node', 'node--policy', 'policy') }}>
+  {% if not page %}
+    <header class="policy__header">
+      <h2{{ title_attributes.addClass('policy__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </header>
+  {% else %}
+    <header class="policy__hero">
+      <div class="container">
+        <div class="policy__breadcrumb">
+          <a href="/">Home</a> / <a href="/policies">Policies</a>
+        </div>
+        <h1{{ title_attributes.addClass('policy__title') }}>{{ label }}</h1>
+        <div class="policy__status">
+          <span class="policy__badge">Open for Community Comment</span>
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  <div class="container">
+    <div class="policy__wrapper">
+      <!-- Main content -->
+      <div class="policy__main">
+        {{ content.body }}
+
+        <!-- Comments Section -->
+        <section class="comments">
+          <h2 class="comments__title">Community Feedback</h2>
+
+          {% if logged_in %}
+            <div class="comments__form">
+              {{ content.comment }}
+            </div>
+          {% else %}
+            <div class="comments__login-prompt">
+              <p>Register or login to share your perspective on this policy.</p>
+              <a href="/user/register" class="button button--primary">Register Now</a>
+              <a href="/user/login" class="button button--outline">Login</a>
+            </div>
+          {% endif %}
+
+          <div class="comments__list">
+            <!-- Comments will render here -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar with policy info -->
+      <aside class="policy__sidebar">
+        <!-- Policy Status Card -->
+        <div class="card card--featured">
+          <h3 class="card__title">Policy Status</h3>
+          <div class="card__content">
+            <p><strong>Status:</strong> Open for Comment</p>
+            <p><strong>Effective Date:</strong> TBD</p>
+            <p><strong>Jurisdiction:</strong> Local</p>
+          </div>
+        </div>
+
+        <!-- Official Source -->
+        {% if content.field_official_source_url %}
+          <div class="card">
+            <h3 class="card__title">Official Document</h3>
+            {{ content.field_official_source_url }}
+          </div>
+        {% endif %}
+
+        <!-- Categories -->
+        {% if content.field_category %}
+          <div class="card">
+            <h3 class="card__title">Policy Category</h3>
+            {{ content.field_category }}
+          </div>
+        {% endif %}
+
+        <!-- Share -->
+        <div class="card">
+          <h3 class="card__title">Share This Policy</h3>
+          <div class="policy__share-buttons">
+            <a href="https://twitter.com/intent/tweet?url={{ url }}&text={{ label }}"
+               class="button button--small button--secondary"
+               target="_blank">Share on Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}"
+               class="button button--small button--secondary"
+               target="_blank">Share on Facebook</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Related Policies -->
+    {% if content.field_related_policies %}
+      <section class="policy__related">
+        <h2>Related Policies</h2>
+        <div class="grid grid--3col">
+          {{ content.field_related_policies }}
+        </div>
+      </section>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme override to display a Research Post node.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes.addClass('node', 'node--research-post', 'research-post') }}>
+  {% if not page %}
+    <header class="research-post__header">
+      <h2{{ title_attributes.addClass('research-post__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </header>
+  {% else %}
+    <header class="research-post__hero">
+      <div class="container">
+        <div class="research-post__hero-content">
+          <div class="research-post__breadcrumb">
+            <a href="/">Home</a> / <a href="/research">Research & Insights</a>
+          </div>
+          <h1{{ title_attributes.addClass('research-post__title') }}>{{ label }}</h1>
+          <div class="research-post__meta">
+            <span class="research-post__category">Policy Research</span>
+            <span class="research-post__date">{{ node.created.value|format_date('long') }}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  <div class="container">
+    <div class="research-post__content">
+      <!-- Main content column -->
+      <div class="research-post__body">
+        {{ content.body }}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="research-post__sidebar">
+        {% if content.field_featured_image %}
+          <div class="research-post__featured">
+            {{ content.field_featured_image }}
+          </div>
+        {% endif %}
+
+        <!-- Research Area Tags -->
+        <div class="research-post__categories">
+          <h3>Research Areas</h3>
+          {{ content.field_research_area }}
+        </div>
+
+        <!-- Call-to-Action -->
+        <div class="research-post__cta card card--featured">
+          <h3 class="card__title">Share This Research</h3>
+          <p>Help spread evidence-based policy insights in your community.</p>
+          <a href="/get-involved" class="button button--primary">Get Involved</a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Related Posts -->
+    {% if content.field_related_posts %}
+      <section class="research-post__related">
+        <h2>Related Research</h2>
+        <div class="grid grid--3col">
+          {{ content.field_related_posts }}
+        </div>
+      </section>
+    {% endif %}
+  </div>
+</article>

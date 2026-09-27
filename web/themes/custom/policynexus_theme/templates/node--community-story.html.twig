@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme override to display a Community Story node.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+<article{{ attributes.addClass('node', 'node--community-story', 'community-story') }}>
+  {% if page %}
+    <!-- Full page view -->
+    <header class="community-story__hero">
+      <div class="container">
+        {% if content.field_featured_image %}
+          <div class="community-story__image">
+            {{ content.field_featured_image }}
+          </div>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="community-story__wrapper">
+        <article class="community-story__main">
+          <header class="community-story__header">
+            <h1{{ title_attributes.addClass('community-story__title') }}>{{ label }}</h1>
+            <div class="community-story__byline">
+              <span class="community-story__storyteller">by {{ node.field_storyteller_name.value }}</span>
+              {% if node.field_storyteller_title.value %}
+                <span class="community-story__role">{{ node.field_storyteller_title.value }}</span>
+              {% endif %}
+            </div>
+          </header>
+
+          <div class="community-story__content">
+            {{ content.body }}
+          </div>
+
+          <!-- Outcome Section -->
+          {% if content.field_outcome %}
+            <div class="community-story__outcome">
+              <h2>What Changed</h2>
+              {{ content.field_outcome }}
+            </div>
+          {% endif %}
+
+          <!-- Community Tags -->
+          {% if content.field_community_location %}
+            <div class="community-story__communities">
+              <h3>Communities</h3>
+              {{ content.field_community_location }}
+            </div>
+          {% endif %}
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="community-story__sidebar">
+          <!-- Story Quote Card -->
+          <div class="card card--featured">
+            <h3 class="card__subtitle">Resident Voice</h3>
+            <blockquote class="community-story__quote">
+              "{{ node.body.summary|striptags|slice(0, 100) }}..."
+            </blockquote>
+          </div>
+
+          <!-- Get Involved CTA -->
+          <div class="card">
+            <h3 class="card__title">Share Your Story</h3>
+            <p>Your voice matters. Tell us how policy affects your community.</p>
+            <a href="/get-involved" class="button button--primary">Share Your Voice</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  {% else %}
+    <!-- Teaser/Card view -->
+    <div class="card">
+      {% if content.field_featured_image %}
+        <div class="card__image">
+          {{ content.field_featured_image }}
+        </div>
+      {% endif %}
+      <h3{{ title_attributes.addClass('card__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+      <p class="card__subtitle">{{ node.field_storyteller_name.value }}</p>
+      <p class="card__content">{{ content.body.0 }}</p>
+      <a href="{{ url }}" class="button button--small button--secondary">Read Story</a>
+    </div>
+  {% endif %}
+</article>
