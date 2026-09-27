@@ -10,21 +10,7 @@
  */
 #}
 
-<header class="header" role="banner">
-  <div class="container">
-    <div class="header__inner">
-      <div class="header__logo">
-        {{ site_name }}
-      </div>
-      <nav class="header__nav" role="navigation" aria-label="Main">
-        {{ page.primary_menu }}
-      </nav>
-      <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        ☰
-      </button>
-    </div>
-  </div>
-</header>
+{% include 'header.html.twig' %}
 
 {# Check if this is a page node with hero by looking for page__hero class in content #}
 {% set has_page_hero = page.content|render|striptags|trim and 'page__hero' in page.content|render %}

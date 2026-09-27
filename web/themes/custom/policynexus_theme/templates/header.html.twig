@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for the header component.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<header class="header" role="banner">
+  <div class="container">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">P</div>
+        <div class="header__logo-text">
+          <div class="header__logo-title">PolicyLink Nexus</div>
+          <div class="header__logo-subtitle">CONSULTANCY</div>
+        </div>
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main">
+        {{ page.primary_menu }}
+      </nav>
+      <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
