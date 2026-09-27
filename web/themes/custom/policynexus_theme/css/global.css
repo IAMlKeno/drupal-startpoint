@@ -439,6 +439,14 @@ header[role="banner"],
   margin: 0;
 }
 
+.main-content {
+  margin: auto !important;
+}
+.page__hero-description .text-content {
+    color: #fff !important;
+}
+
+
 /* Navigation */
 nav {
   margin-left: auto;

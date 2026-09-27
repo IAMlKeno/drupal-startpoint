@@ -1,0 +1,21 @@
+uuid: 3d9d476f-0198-4b8c-831b-ab0c3b3bfe00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_date
+    - node.type.research_post
+  module:
+    - datetime
+id: node.research_post.field_publication_date
+field_name: field_publication_date
+entity_type: node
+bundle: research_post
+label: 'Publication Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

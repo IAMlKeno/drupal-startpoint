@@ -1,0 +1,22 @@
+uuid: 4da42d29-1b10-4ee8-8ea8-16214e5ea757
+langcode: en
+status: true
+dependencies:
+  theme:
+    - policynexus_theme
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: policynexus_theme_primary_local_tasks
+theme: policynexus_theme
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }
