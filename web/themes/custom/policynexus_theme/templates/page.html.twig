@@ -10,7 +10,7 @@
  */
 #}
 
-{% include 'header.html.twig' %}
+{% include '@policynexus_theme/header.html.twig' %}
 
 {# Check if this is a page node with hero by looking for page__hero class in content #}
 {% set has_page_hero = page.content|render|striptags|trim and 'page__hero' in page.content|render %}
