@@ -24,6 +24,12 @@
         <main class="faq__content">
           <h1{{ title_attributes.addClass('faq__title') }}>{{ label }}</h1>
 
+          {% if content.field_summary %}
+            <div class="faq__summary">
+              <p><em>{{ content.field_summary }}</em></p>
+            </div>
+          {% endif %}
+
           <!-- FAQ Body -->
           <div class="faq__answer">
             {{ content.body }}

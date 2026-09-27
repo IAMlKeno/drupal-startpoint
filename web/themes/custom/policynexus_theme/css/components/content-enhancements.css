@@ -1,0 +1,178 @@
+/* Content Type Field Styling */
+
+/* Summary/Excerpt styling */
+.research-post__summary,
+.community-story__summary,
+.faq__summary {
+  background: linear-gradient(135deg, #f0f4f8, #f8f9fa);
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.research-post__summary p,
+.community-story__summary p,
+.faq__summary p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Policy summary styling */
+.policy__summary {
+  background: #f5f7fa;
+  border: 1px solid #e0e0e0;
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.policy__summary p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Author/Date styling */
+.research-post__author {
+  display: inline-block;
+  margin-left: var(--spacing-sm);
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+/* Outcome styling */
+.community-story__outcome {
+  background: linear-gradient(135deg, #e8f4f6, #f0f9fa);
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.community-story__outcome h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+.community-story__outcome p {
+  margin-bottom: var(--spacing-md);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Policy meta information styling */
+.policy__summary + .policy__main > p:first-child {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* FAQ category badge */
+.faq__category {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.faq__category strong {
+  color: var(--color-accent);
+}
+
+/* Team member additional info */
+.team-member__contact-info {
+  background: #f9f9f9;
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  margin-top: var(--spacing-md);
+}
+
+.team-member__contact-info p {
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-member__contact-info strong {
+  color: var(--color-primary);
+  flex: 0 0 120px;
+}
+
+.team-member__contact-info a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.team-member__contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Date field styling */
+[class*="__date"],
+[class*="__effective-date"],
+[class*="__publication-date"] {
+  color: #666;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0 var(--spacing-sm);
+}
+
+/* Related content grid styling */
+.policy__related,
+.research-post__related,
+.team-member__related,
+.faq__related-policies {
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-xl);
+  border-top: 2px solid #e0e0e0;
+}
+
+.policy__related h2,
+.research-post__related h2,
+.team-member__related h2,
+.faq__related-policies h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+}
+
+/* Card styling for related content */
+.policy__related .card,
+.research-post__related .card,
+.team-member__related .card,
+.faq__related-policies .card {
+  transition: all 0.3s ease;
+}
+
+.policy__related .card:hover,
+.research-post__related .card:hover,
+.team-member__related .card:hover,
+.faq__related-policies .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26, 40, 68, 0.15);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .team-member__contact-info p {
+    align-items: center;
+  }
+
+  .research-post__author {
+    margin-left: var(--spacing-md);
+  }
+}

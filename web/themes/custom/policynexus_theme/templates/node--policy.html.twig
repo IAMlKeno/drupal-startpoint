@@ -37,6 +37,14 @@
     <div class="policy__wrapper">
       <!-- Main content -->
       <div class="policy__main">
+        <!-- Summary (if available) -->
+        {% if content.field_summary %}
+          <div class="policy__summary">
+            <p><strong>Overview:</strong> {{ content.field_summary }}</p>
+          </div>
+        {% endif %}
+
+        <!-- Full policy content -->
         {{ content.body }}
 
         <!-- Comments Section -->
@@ -65,19 +73,30 @@
       <aside class="policy__sidebar">
         <!-- Policy Status Card -->
         <div class="card card--featured">
-          <h3 class="card__title">Policy Status</h3>
+          <h3 class="card__title">Policy Details</h3>
           <div class="card__content">
             <p><strong>Status:</strong> Open for Comment</p>
-            <p><strong>Effective Date:</strong> TBD</p>
-            <p><strong>Jurisdiction:</strong> Local</p>
+            {% if content.field_effective_date %}
+              <p><strong>Effective Date:</strong> {{ content.field_effective_date }}</p>
+            {% else %}
+              <p><strong>Effective Date:</strong> TBD</p>
+            {% endif %}
+            {% if content.field_category %}
+              <p><strong>Category:</strong> {{ content.field_category }}</p>
+            {% else %}
+              <p><strong>Category:</strong> Local Policy</p>
+            {% endif %}
           </div>
         </div>
 
         <!-- Official Source -->
         {% if content.field_official_source_url %}
           <div class="card">
-            <h3 class="card__title">Official Document</h3>
-            {{ content.field_official_source_url }}
+            <h3 class="card__title">Official Policy Document</h3>
+            <p>
+              {{ content.field_official_source_url }}
+            </p>
+            <a href="#" class="button button--small button--primary">View Full Document</a>
           </div>
         {% endif %}
 

@@ -17,5 +17,6 @@ global:
       css/components/community-story.css: {}
       css/components/faq.css: {}
       css/components/team-member.css: {}
+      css/components/content-enhancements.css: {}
   js:
     js/theme.js: {}

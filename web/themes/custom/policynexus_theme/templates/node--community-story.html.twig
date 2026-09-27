@@ -30,22 +30,33 @@
         <article class="community-story__main">
           <header class="community-story__header">
             <h1{{ title_attributes.addClass('community-story__title') }}>{{ label }}</h1>
-            <div class="community-story__byline">
-              <span class="community-story__storyteller">by {{ node.field_storyteller_name.value }}</span>
-              {% if node.field_storyteller_title.value %}
-                <span class="community-story__role">{{ node.field_storyteller_title.value }}</span>
-              {% endif %}
-            </div>
+            {% if content.field_storyteller_name or content.field_storyteller_title %}
+              <div class="community-story__byline">
+                {% if content.field_storyteller_name %}
+                  <span class="community-story__storyteller">by {{ content.field_storyteller_name }}</span>
+                {% endif %}
+                {% if content.field_storyteller_title %}
+                  <span class="community-story__role">{{ content.field_storyteller_title }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
           </header>
 
           <div class="community-story__content">
             {{ content.body }}
           </div>
 
+          <!-- Summary -->
+          {% if content.field_summary %}
+            <div class="community-story__summary">
+              <p><em>{{ content.field_summary }}</em></p>
+            </div>
+          {% endif %}
+
           <!-- Outcome Section -->
           {% if content.field_outcome %}
             <div class="community-story__outcome">
-              <h2>What Changed</h2>
+              <h2>What Changed (Impact)</h2>
               {{ content.field_outcome }}
             </div>
           {% endif %}
