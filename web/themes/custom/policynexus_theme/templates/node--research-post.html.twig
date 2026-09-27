@@ -87,5 +87,8 @@
         </div>
       </section>
     {% endif %}
+
+    <!-- Auto-render all remaining fields -->
+    {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_author', 'field_publication_date', 'field_research_area', 'field_related_posts') }}
   </div>
 </article>

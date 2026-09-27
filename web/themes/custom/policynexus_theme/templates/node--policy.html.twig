@@ -132,5 +132,8 @@
         </div>
       </section>
     {% endif %}
+
+    <!-- Auto-render all remaining fields -->
+    {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_category', 'field_effective_date', 'field_official_source_url', 'field_related_policies', 'comment') }}
   </div>
 </article>

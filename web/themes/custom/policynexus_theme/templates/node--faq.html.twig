@@ -53,6 +53,9 @@
           {% endif %}
 
           <!-- Navigation -->
+          <!-- Auto-render all remaining fields -->
+          {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_faq_category', 'field_related_policies') }}
+
           <nav class="faq__nav">
             <a href="/faq" class="button button--secondary">Back to FAQ</a>
           </nav>

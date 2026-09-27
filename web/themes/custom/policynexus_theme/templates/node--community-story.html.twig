@@ -86,6 +86,8 @@
             <p>Your voice matters. Tell us how policy affects your community.</p>
             <a href="/get-involved" class="button button--primary">Share Your Voice</a>
           </div>
+          <!-- Auto-render all remaining fields -->
+          {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_storyteller_name', 'field_storyteller_title', 'field_outcome', 'field_community_location') }}
         </aside>
       </div>
     </div>

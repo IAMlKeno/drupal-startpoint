@@ -75,6 +75,9 @@
               </div>
             </section>
           {% endif %}
+
+          <!-- Auto-render all remaining fields -->
+          {{ content|without('title', 'body', 'featured_image', 'field_job_title', 'field_research_area', 'field_email', 'field_phone', 'field_social_links') }}
         </main>
 
         <!-- Sidebar -->
