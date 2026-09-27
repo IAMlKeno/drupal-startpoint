@@ -1,77 +1,87 @@
-/* Card Component */
+/* Card Component - PolicyLink Nexus */
+/* Main card styles are in global.css */
+
 .card {
-  background: #ffffff;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: var(--spacing-md);
-  transition: all 0.2s ease;
+  background-color: var(--color-white);
+  padding: 28px 26px 30px;
+  transition: box-shadow 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card--featured {
+  background-color: var(--color-light-bg);
+  border-color: var(--color-border);
 }
 
 .card__image {
   width: 100%;
   height: auto;
   margin-bottom: var(--spacing-md);
-  border-radius: 4px;
+  display: block;
 }
 
 .card__title {
-  margin-bottom: var(--spacing-sm);
-  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 19.5px;
+  color: var(--color-navy);
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: var(--lh-normal);
+  font-weight: 400;
 }
 
 .card__subtitle {
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-secondary);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--color-navy);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-weight: 400;
 }
 
 .card__content {
-  margin-bottom: var(--spacing-md);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-medium);
+  margin: 0 0 var(--spacing-md) 0;
 }
 
 .card__footer {
   display: flex;
   gap: var(--spacing-sm);
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.card__tag {
+/* Tag/Label in card */
+.card__tag,
+.card__label {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background-color: var(--color-light);
-  color: var(--color-primary);
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 5px 10px;
+  background-color: var(--color-light-bg);
+  color: var(--color-navy);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 0;
 }
 
-.card__tag--primary {
-  background-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.card__tag--secondary {
-  background-color: var(--color-secondary);
-  color: #ffffff;
-}
-
-/* Featured Card */
-.card--featured {
-  border: 2px solid var(--color-accent);
-  background-color: #fafaf8;
+.card__tag--primary,
+.card__tag--gold {
+  background-color: transparent;
+  color: var(--color-gold);
+  font-weight: 500;
 }
 
 /* Minimal Card (Teaser) */
 .card--minimal {
   border: none;
-  padding: var(--spacing-sm);
+  padding: 0;
   background: transparent;
 }
 
@@ -80,12 +90,8 @@
 }
 
 /* Responsive */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .card {
-    padding: var(--spacing-sm);
-  }
-
-  .card__title {
-    font-size: 1.1rem;
+    padding: 20px 18px 22px;
   }
 }

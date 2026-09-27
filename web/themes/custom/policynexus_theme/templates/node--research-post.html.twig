@@ -30,9 +30,7 @@
           <div class="research-post__meta">
             <span class="research-post__category">Policy Research</span>
             {% if node.field_publication_date.value %}
-              <span class="research-post__date">{{ node.field_publication_date.value|format_date('long') }}</span>
-            {% else %}
-              <span class="research-post__date">{{ node.created.value|format_date('long') }}</span>
+              <span class="research-post__date">{{ node.field_publication_date.value }}</span>
             {% endif %}
             {% if node.field_author.value %}
               <span class="research-post__author">by {{ node.field_author.value }}</span>
@@ -89,6 +87,6 @@
     {% endif %}
 
     <!-- Auto-render all remaining fields -->
-    {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_author', 'field_publication_date', 'field_research_area', 'field_related_posts') }}
+    {# {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_author', 'field_publication_date', 'field_research_area', 'field_related_posts') }} #}
   </div>
 </article>

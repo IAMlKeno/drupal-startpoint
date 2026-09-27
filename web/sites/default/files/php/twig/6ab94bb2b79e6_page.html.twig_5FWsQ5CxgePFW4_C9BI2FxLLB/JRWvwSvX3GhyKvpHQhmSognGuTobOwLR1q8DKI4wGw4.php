@@ -66,54 +66,75 @@ class __TwigTemplate_d0663a232d74d7e6a2b06a71eb8c3b11 extends Template
 </header>
 
 ";
-        // line 29
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "hero", [], "any", false, false, true, 29)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 30
+        // line 30
+        $context["has_page_hero"] = ((($tmp = Twig\Extension\CoreExtension::trim(Twig\Extension\CoreExtension::striptags($this->extensions['Drupal\Core\Template\TwigExtension']->renderVar(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 30))))) && $tmp instanceof Markup ? (string) $tmp : $tmp) && CoreExtension::inFilter("page__hero", $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar(CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 30))));
+        // line 31
+        yield "
+";
+        // line 32
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "hero", [], "any", false, false, true, 32)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 33
             yield "  <div class=\"hero\">
     ";
-            // line 31
-            yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "hero", [], "any", false, false, true, 31), "html", null, true);
+            // line 34
+            yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "hero", [], "any", false, false, true, 34), "html", null, true);
             yield "
   </div>
 ";
         }
-        // line 34
+        // line 37
         yield "
 <main class=\"main-content\" role=\"main\">
   ";
-        // line 36
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 36)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 37
-            yield "    <div class=\"container\">
-      ";
-            // line 38
-            yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 38), "html", null, true);
-            yield "
-    </div>
-  ";
+        // line 39
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 39)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 40
+            yield "    ";
+            if ((($tmp = ($context["has_page_hero"] ?? null)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 41
+                yield "      ";
+                // line 42
+                yield "      ";
+                yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 42), "html", null, true);
+                yield "
+    ";
+            } else {
+                // line 44
+                yield "      ";
+                // line 45
+                yield "      <div class=\"container\">
+        ";
+                // line 46
+                yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "content", [], "any", false, false, true, 46), "html", null, true);
+                yield "
+      </div>
+    ";
+            }
+            // line 49
+            yield "  ";
         }
-        // line 41
+        // line 50
         yield "</main>
 
 <footer class=\"footer\" role=\"contentinfo\">
   <div class=\"container\">
     <div class=\"footer__inner\">
       ";
-        // line 46
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer", [], "any", false, false, true, 46)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 47
+        // line 55
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer", [], "any", false, false, true, 55)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 56
             yield "        <div class=\"footer__menu\">
           ";
-            // line 48
-            yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer", [], "any", false, false, true, 48), "html", null, true);
+            // line 57
+            yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, CoreExtension::getAttribute($this->env, $this->source, ($context["page"] ?? null), "footer", [], "any", false, false, true, 57), "html", null, true);
             yield "
         </div>
       ";
         }
-        // line 51
+        // line 60
         yield "      <div class=\"footer__bottom\">
         <p>&copy; ";
-        // line 52
+        // line 61
         yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, $this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "Y"), "html", null, true);
         yield " ";
         yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->escapeFilter($this->env, ($context["site_name"] ?? null), "html", null, true);
@@ -124,7 +145,7 @@ class __TwigTemplate_d0663a232d74d7e6a2b06a71eb8c3b11 extends Template
       </div>
       <div class=\"footer__copyright\">
         ";
-        // line 58
+        // line 67
         yield (string) $this->extensions['Drupal\Core\Template\TwigExtension']->renderVar(t("Built with Drupal 11"));
         yield "
       </div>
@@ -165,7 +186,7 @@ class __TwigTemplate_d0663a232d74d7e6a2b06a71eb8c3b11 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  128 => 58,  117 => 52,  114 => 51,  108 => 48,  105 => 47,  103 => 46,  96 => 41,  90 => 38,  87 => 37,  85 => 36,  81 => 34,  75 => 31,  72 => 30,  70 => 29,  58 => 20,  52 => 17,  45 => 12,);
+        return array (  149 => 67,  138 => 61,  135 => 60,  129 => 57,  126 => 56,  124 => 55,  117 => 50,  114 => 49,  108 => 46,  105 => 45,  103 => 44,  97 => 42,  95 => 41,  92 => 40,  90 => 39,  86 => 37,  80 => 34,  77 => 33,  75 => 32,  72 => 31,  70 => 30,  58 => 20,  52 => 17,  45 => 12,);
     }
 
     public function getSourceContext(): Source
@@ -182,15 +203,15 @@ class __TwigTemplate_d0663a232d74d7e6a2b06a71eb8c3b11 extends Template
     
     public function checkSecurity()
     {
-        static $tags = ["if" => 29];
-        static $filters = ["escape" => 17, "date" => 52, "t" => 58];
+        static $tags = ["set" => 30, "if" => 32];
+        static $filters = ["escape" => 17, "trim" => 30, "striptags" => 30, "render" => 30, "date" => 61, "t" => 67];
         static $functions = [];
         static $tests = [];
 
         try {
             $this->sandbox->checkSecurity(
-                [0 => "if"],
-                [0 => "escape", 1 => "date", 2 => "t"],
+                [0 => "set", 1 => "if"],
+                [0 => "escape", 1 => "trim", 2 => "striptags", 3 => "render", 4 => "date", 5 => "t"],
                 [],
                 [],
                 $this->source

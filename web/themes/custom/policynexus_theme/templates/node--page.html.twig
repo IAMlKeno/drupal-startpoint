@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Theme override to display a Basic Page node.
+ *
+ * Available variables:
+ * - node: The node entity
+ * - content: The node content array
+ * - attributes: HTML attributes for the article
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if page %}
+  <!-- Full page view with hero -->
+  <header class="page__hero">
+    <div class="container">
+      <div class="page__hero-content">
+        <!-- Eyebrow label -->
+        {% if node.field_eyebrow.value %}
+          <div class="page__eyebrow">{{ node.field_eyebrow.value }}</div>
+        {% endif %}
+
+        <!-- Main heading -->
+        {% if node.field_header_text.value %}
+          <h1 class="page__hero-title">{{ node.field_header_text.value }}</h1>
+        {% else %}
+          <h1 class="page__hero-title">{{ label }}</h1>
+        {% endif %}
+
+        <!-- Description -->
+        {% if content.body %}
+          <div class="page__hero-description">
+            {{ content.body }}
+          </div>
+        {% endif %}
+
+        <!-- CTA Buttons -->
+        <div class="page__hero-actions">
+          {% if node.cta %}
+            {% for item in node.cta %}
+              <a href="{{ item.uri }}" class="button button--primary">
+                {{ item.title }}
+              </a>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      {% if content.field_featured_image %}
+        <div class="page__hero-image">
+          {{ content.field_featured_image }}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- Additional content -->
+  <article{{ attributes.addClass('node', 'node--page', 'page') }}>
+    <div class="container">
+      <div class="page__content">
+        {{ content|without('title', 'body', 'field_header_text', 'field_eyebrow', 'field_featured_image', 'cta') }}
+      </div>
+    </div>
+  </article>
+{% else %}
+<article{{ attributes.addClass('node', 'node--page', 'page') }}>
+    <!-- Teaser/Card view -->
+    <header class="page__header">
+      <h2{{ title_attributes.addClass('page__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </header>
+    <div class="page__teaser">
+      {{ content.body }}
+    </div>
+  </article>
+{% endif %}

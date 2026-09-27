@@ -1,36 +1,46 @@
-/* Policy Node Layout */
+/* Policy Node Layout - PolicyLink Nexus */
 .policy {
-  padding: var(--spacing-lg) 0;
+  padding: 0;
 }
 
 .policy__hero {
-  background: linear-gradient(135deg, var(--color-primary), #2a3d6f);
-  color: white;
-  padding: var(--spacing-xl) var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  background-color: var(--color-navy);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.028) 0px,
+    rgba(255, 255, 255, 0.028) 2px,
+    transparent 2px,
+    transparent 9px
+  );
+  color: var(--color-white);
+  padding: 52px 24px 56px;
 }
 
 .policy__breadcrumb {
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: #7e94ab;
   margin-bottom: var(--spacing-md);
-  opacity: 0.9;
 }
 
 .policy__breadcrumb a {
-  color: white;
+  color: #7e94ab;
   text-decoration: none;
 }
 
 .policy__breadcrumb a:hover {
-  text-decoration: underline;
+  color: var(--color-gold);
 }
 
 .policy__title {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-family: var(--font-serif);
+  font-size: clamp(27px, 3.6vw, 42px);
   font-weight: 700;
-  margin: var(--spacing-md) 0;
-  line-height: 1.2;
+  margin: 0;
+  line-height: var(--lh-tight);
+  color: var(--color-white);
 }
 
 .policy__status {
@@ -39,77 +49,90 @@
 
 .policy__badge {
   display: inline-block;
-  background: var(--color-secondary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
+  background-color: var(--color-navy);
+  color: var(--color-gold);
+  padding: 5px 10px;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 /* Main layout */
 .policy__wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xxl);
+  gap: 44px;
+  padding: 40px 24px 80px;
+  align-items: start;
 }
 
 .policy__main {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
+  font-size: 17px;
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-medium);
 }
 
 .policy__main p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 .policy__main h2,
 .policy__main h3 {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
-  color: var(--color-primary);
+  color: var(--color-navy);
+  font-family: var(--font-serif);
+}
+
+/* Summary section */
+.policy__summary {
+  background-color: var(--color-light-bg);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  border-radius: 0;
 }
 
 /* Comments section */
 .comments {
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-xl);
   padding-top: var(--spacing-xl);
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .comments__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 400;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--color-navy);
+  line-height: var(--lh-normal);
 }
 
 .comments__login-prompt {
-  background: #f5f5f5;
-  border: 2px dashed #ccc;
+  background: var(--color-light-bg);
+  border: 1px solid var(--color-border);
   padding: var(--spacing-lg);
-  border-radius: 8px;
+  border-radius: 0;
   text-align: center;
 }
 
 .comments__login-prompt p {
   margin-bottom: var(--spacing-md);
-  color: #555;
+  color: var(--color-text-medium);
 }
 
 .comments__login-prompt .button {
-  margin-right: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
 }
 
 .comments__form {
-  background: #f9f9f9;
+  background: var(--color-white);
   padding: var(--spacing-lg);
-  border-radius: 8px;
+  border-radius: 0;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -136,43 +159,30 @@
 
 /* Related policies */
 .policy__related {
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-2xl);
   padding-top: var(--spacing-xl);
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .policy__related h2 {
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: 29px;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--color-navy);
+  font-weight: 700;
 }
 
 /* Tablet and up */
 @media (min-width: 768px) {
   .policy__wrapper {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .policy__hero {
-    padding: var(--spacing-xxl) var(--spacing-xl);
-  }
-
-  .policy__title {
-    font-size: 2.5rem;
-  }
-
-  .policy__share-buttons {
-    flex-direction: row;
-  }
-
-  .policy__share-buttons .button {
-    flex: 1;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 56px;
   }
 }
 
-/* Desktop and up */
-@media (min-width: 1024px) {
-  .policy__title {
-    font-size: 3rem;
+/* Mobile */
+@media (max-width: 768px) {
+  .policy__hero {
+    padding: 48px 24px;
   }
 }

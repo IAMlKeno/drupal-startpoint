@@ -1,60 +1,109 @@
-/* Header Component */
+/* Header Component - PolicyLink Nexus */
+
+/* Main Header Structure (handled in global.css) */
+header[role="banner"],
 .header {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--spacing-md) 0;
   position: relative;
   z-index: 100;
 }
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
+/* Logo Styling */
 .header__logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 13px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
-.header__logo img {
-  height: 32px;
-  width: auto;
+.header__logo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo-title {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+}
+
+.header__logo-subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gray-light);
+  margin: 0;
 }
 
 /* Navigation */
-.header__nav {
-  display: none;
+.header__nav,
+nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: auto;
+  list-style: none;
 }
 
-@media (min-width: 768px) {
-  .header__nav {
-    display: flex;
-    gap: var(--spacing-lg);
-    list-style: none;
-  }
+.header__nav li,
+.nav__item {
+  display: block;
+}
 
-  .header__nav a {
-    color: var(--color-primary);
-    font-weight: 500;
-    padding: 0.5rem 0;
-  }
+.header__nav a,
+.nav__link {
+  background: none;
+  border: 0;
+  padding: 10px 14px 8px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-navy);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
 
-  .header__nav a:hover {
-    color: var(--color-secondary);
-    text-decoration: none;
-  }
+.header__nav a:hover,
+.nav__link:hover {
+  color: var(--color-gold);
+}
 
-  .header__nav a.is-active {
-    border-bottom: 2px solid var(--color-accent);
-    color: var(--color-primary);
-  }
+.header__nav a.is-active,
+.nav__link.active {
+  color: var(--color-gold);
+}
+
+.header__nav a.is-active::after,
+.nav__link.active::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: var(--color-gold);
+  margin-top: 6px;
 }
 
 /* Mobile Menu Toggle */
@@ -62,28 +111,30 @@
   display: none;
   background: none;
   border: none;
-  color: var(--color-primary);
+  color: var(--color-navy);
   cursor: pointer;
   font-size: 1.5rem;
   padding: 0;
+  margin-left: auto;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .header__menu-toggle {
     display: block;
   }
 
   .header__nav {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: var(--color-white);
     flex-direction: column;
     gap: 0;
     padding: var(--spacing-md);
     border-bottom: 1px solid var(--color-border);
-    list-style: none;
+    width: 100%;
   }
 
   .header__nav.is-open {
@@ -98,30 +149,21 @@
     display: block;
     padding: var(--spacing-sm) 0;
   }
-}
 
-/* Sticky Header (Non-Sticky per Requirements) */
-.header {
-  position: static;
-}
-
-/* Logo Sizing */
-@media (max-width: 767px) {
-  .header__logo {
-    font-size: 1.25rem;
-  }
-
-  .header__logo img {
-    height: 28px;
+  .header .button {
+    margin-left: 0;
   }
 }
 
-@media (min-width: 1024px) {
-  .header__logo {
-    font-size: 1.75rem;
-  }
+/* Header CTA Button */
+.header .button--primary {
+  margin-left: auto;
+}
 
-  .header__logo img {
-    height: 40px;
+@media (max-width: 768px) {
+  .header .button--primary {
+    margin-left: 0;
+    width: 100%;
+    margin-top: var(--spacing-md);
   }
 }

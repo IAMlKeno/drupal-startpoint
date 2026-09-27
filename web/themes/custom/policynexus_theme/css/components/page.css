@@ -1,0 +1,187 @@
+/* Page Component - Hero Section - PolicyLink Nexus */
+
+.page__hero {
+  background-color: var(--color-navy);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.028) 0px,
+    rgba(255, 255, 255, 0.028) 2px,
+    transparent 2px,
+    transparent 9px
+  );
+  color: var(--color-white);
+  padding: 76px 24px 84px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page__hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.page__hero-content {
+  grid-column: 1;
+}
+
+.page__hero-image {
+  grid-column: 2;
+}
+
+/* Eyebrow label */
+.page__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-lg);
+  display: block;
+}
+
+/* Hero title */
+.page__hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4.4vw, 54px);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-white);
+  text-wrap: pretty;
+}
+
+/* Hero description */
+.page__hero-description {
+  font-size: 18.5px;
+  line-height: var(--lh-loose);
+  color: #b8c6d4;
+  max-width: 52ch;
+  margin-bottom: var(--spacing-xl);
+  font-weight: 300;
+}
+
+.page__hero-description p {
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.page__hero-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* CTA Actions */
+.page__hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.page__hero-actions .button {
+  display: inline-block;
+}
+
+.page__hero-actions .button--primary {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  padding: 17px 34px;
+  font-size: 15px;
+}
+
+.page__hero-actions .button--primary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.page__hero-actions .button--outline {
+  background-color: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 17px 34px;
+  font-size: 15px;
+}
+
+.page__hero-actions .button--outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.page__hero-actions .button--secondary {
+  background-color: transparent;
+  border: 1px solid #47617f;
+  color: var(--color-white);
+  padding: 17px 34px;
+  font-size: 15px;
+}
+
+.page__hero-actions .button--secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Hero image placeholder */
+.page__hero-image {
+  border: 1px solid #2b4361;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 8px,
+    rgba(255, 255, 255, 0.02) 8px,
+    rgba(255, 255, 255, 0.02) 16px
+  );
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7e94ab;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.page__hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Page content below hero */
+.page__content {
+  padding: 40px 0 80px;
+}
+
+.page__content p {
+  font-size: 17px;
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-medium);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page__hero {
+    padding: 48px 24px;
+  }
+
+  .page__hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .page__hero-image {
+    display: none;
+  }
+
+  .page__hero-title {
+    font-size: clamp(24px, 3vw, 32px);
+  }
+
+  .page__hero-actions {
+    flex-direction: column;
+  }
+
+  .page__hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}

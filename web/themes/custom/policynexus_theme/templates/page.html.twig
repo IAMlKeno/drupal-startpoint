@@ -26,6 +26,9 @@
   </div>
 </header>
 
+{# Check if this is a page node with hero by looking for page__hero class in content #}
+{% set has_page_hero = page.content|render|striptags|trim and 'page__hero' in page.content|render %}
+
 {% if page.hero %}
   <div class="hero">
     {{ page.hero }}
@@ -34,9 +37,15 @@
 
 <main class="main-content" role="main">
   {% if page.content %}
-    <div class="container">
+    {% if has_page_hero %}
+      {# For page nodes with hero, render content without container wrapper #}
       {{ page.content }}
-    </div>
+    {% else %}
+      {# For other content types, use container wrapper #}
+      <div class="container">
+        {{ page.content }}
+      </div>
+    {% endif %}
   {% endif %}
 </main>
 

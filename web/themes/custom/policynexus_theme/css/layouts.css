@@ -1,64 +1,23 @@
-/* Layout System */
+/* Layout Utilities - PolicyLink Nexus */
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* Grid System */
-.grid {
-  display: grid;
-  gap: var(--spacing-lg);
-}
-
-.grid--2col {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid--3col {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid--4col {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Flexible layouts for article + sidebar */
-.article-with-sidebar {
+/* Two-column article + sidebar layout */
+.article-with-sidebar,
+.page-with-sidebar {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
   align-items: start;
 }
 
-/* Tablet breakpoint */
 @media (min-width: 768px) {
-  .grid--2col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid--3col {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .grid--4col {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .article-with-sidebar {
-    grid-template-columns: 2fr 1fr;
+  .article-with-sidebar,
+  .page-with-sidebar {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 56px;
   }
 }
 
-/* Desktop breakpoint */
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 var(--spacing-xl);
-  }
-}
-
-/* Two-column article layout */
+/* Article and Sidebar columns */
 .article-main,
 .article-sidebar {
   display: flex;
@@ -69,33 +28,7 @@
   gap: var(--spacing-lg);
 }
 
-/* Section spacing */
-section {
-  margin-bottom: var(--spacing-xl);
-}
-
-section:last-child {
-  margin-bottom: 0;
-}
-
-/* Typography for sections */
-section h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 600;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
-  border-bottom: 3px solid var(--color-secondary);
-  padding-bottom: var(--spacing-md);
-}
-
-section h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
-  color: var(--color-primary);
-}
-
-/* Flexible spacing utilities */
+/* Spacing utilities */
 .spacing-sm { margin-bottom: var(--spacing-sm); }
 .spacing-md { margin-bottom: var(--spacing-md); }
 .spacing-lg { margin-bottom: var(--spacing-lg); }
@@ -105,3 +38,19 @@ section h3 {
 .spacing-md-top { margin-top: var(--spacing-md); }
 .spacing-lg-top { margin-top: var(--spacing-lg); }
 .spacing-xl-top { margin-top: var(--spacing-xl); }
+
+/* Content wrapper with consistent width */
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+section:last-child {
+  margin-bottom: 0;
+}

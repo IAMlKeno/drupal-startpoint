@@ -1,13 +1,14 @@
-/* Team Member Layout */
+/* Team Member Layout - PolicyLink Nexus */
 .team-member {
-  padding: var(--spacing-lg) 0;
+  padding: 0;
 }
 
 .team-member__hero {
   width: 100%;
   max-height: 400px;
   overflow: hidden;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 0;
+  background-color: var(--color-light-bg);
 }
 
 .team-member__image {
@@ -31,11 +32,11 @@
 .team-member__image-placeholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--color-navy), #2b4361);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-gold);
 }
 
 .team-member__initials {
@@ -48,8 +49,9 @@
 .team-member__wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xxl);
+  gap: 44px;
+  padding: 40px 24px 80px;
+  align-items: start;
 }
 
 .team-member__header {
@@ -57,44 +59,49 @@
 }
 
 .team-member__name {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-family: var(--font-serif);
+  font-size: clamp(24px, 3.6vw, 32px);
   font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-navy);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--spacing-sm) 0;
 }
 
 .team-member__title {
-  font-size: 1.25rem;
-  color: var(--color-secondary);
-  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-text-medium);
+  font-weight: 400;
   margin: 0;
 }
 
 /* Bio section */
 .team-member__bio {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
+  font-size: 17px;
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-medium);
 }
 
 .team-member__bio p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* Research Expertise */
 .team-member__research {
   margin-top: var(--spacing-xl);
-  padding: var(--spacing-lg);
-  background: #f5f5f5;
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-lg);
 }
 
 .team-member__research h2 {
-  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 19.5px;
   margin: 0 0 var(--spacing-md) 0;
-  color: var(--color-primary);
+  color: var(--color-navy);
+  font-weight: 400;
+  line-height: var(--lh-normal);
 }
 
 .team-member__areas {
@@ -107,22 +114,25 @@
 .team-member__contact {
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-lg);
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .team-member__contact h2 {
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-md);
-  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: 19.5px;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-navy);
+  font-weight: 400;
+  line-height: var(--lh-normal);
 }
 
 .team-member__contact-info p {
   margin-bottom: var(--spacing-sm);
-  color: #555;
+  color: var(--color-text-medium);
 }
 
 .team-member__contact-info strong {
-  color: var(--color-primary);
+  color: var(--color-navy);
 }
 
 /* Sidebar */
@@ -136,8 +146,8 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
-  margin: -1rem -1rem 1rem -1rem;
+  border-radius: 0;
+  margin: -28px -26px 0 -26px;
 }
 
 .team-member__card-image img {
@@ -149,13 +159,13 @@
 .team-member__card-placeholder {
   width: 100%;
   height: 150px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--color-navy), #2b4361);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  border-radius: 8px 8px 0 0;
-  margin: -1rem -1rem 1rem -1rem;
+  color: var(--color-gold);
+  border-radius: 0;
+  margin: -28px -26px 0 -26px;
 }
 
 .team-member__card-placeholder .team-member__initials {
@@ -177,53 +187,52 @@
 .team-member__social {
   display: flex;
   gap: var(--spacing-md);
+  flex-direction: column;
 }
 
 .team-member__social-link {
-  color: var(--color-secondary);
+  color: var(--color-blue-link);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  padding: 0.5rem 0;
+  border-radius: 0;
+  transition: color 0.2s ease;
 }
 
 .team-member__social-link:hover {
-  background-color: #f0f0f0;
+  color: var(--color-gold);
 }
 
 /* Related team members */
 .team-member__related {
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-2xl);
   padding-top: var(--spacing-xl);
-  border-top: 2px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 .team-member__related h2 {
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: 29px;
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--color-navy);
+  font-weight: 700;
 }
 
 /* Card view */
 .team-member__card {
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .team-member__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Tablet and up */
 @media (min-width: 768px) {
   .team-member__wrapper {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .team-member__name {
-    font-size: 2.5rem;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 56px;
   }
 
   .team-member__card-contact {
@@ -235,13 +244,14 @@
   }
 
   .team-member__social {
+    flex-direction: row;
     justify-content: center;
   }
 }
 
-/* Desktop and up */
-@media (min-width: 1024px) {
-  .team-member__name {
-    font-size: 3rem;
+/* Mobile */
+@media (max-width: 768px) {
+  .team-member__hero {
+    max-height: 300px;
   }
 }
