@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Team Member'
+type: team_member
+description: 'Staff bios and profiles - builds credibility and author attribution'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

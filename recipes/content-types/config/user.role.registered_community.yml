@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: registered_community
+label: 'Registered Community'
+weight: 2
+is_admin: false
+permissions:
+  - 'access content'
+  - 'view own unpublished content'
+  - 'create comment'
+  - 'post comments'
+  - 'edit own comments'
+  - 'delete own comments'

@@ -1,0 +1,11 @@
+uuid: 6a8a4ec0-3d72-4e8f-92bd-45a4d5c374ef
+langcode: en
+status: true
+dependencies: {  }
+name: 'Team Member'
+type: team_member
+description: 'Staff bios and profiles - builds credibility and author attribution'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

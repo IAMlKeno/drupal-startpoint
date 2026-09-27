@@ -1,0 +1,26 @@
+uuid: c85d8490-23c3-4a28-9e88-cdff115e1c36
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - commerce_order
+    - commerce_payment
+    - file
+    - filter
+    - simplenews
+    - system
+_core:
+  default_config_hash: wkW7P5A53YhGmsgamrmTbfwpZrqdnPYiJdoAZQtdmJg
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'delete own files'
+  - 'manage own commerce_payment_method'
+  - 'subscribe to newsletters'
+  - 'use text format basic_html'
+  - 'view own commerce_order'

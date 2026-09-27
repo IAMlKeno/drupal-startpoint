@@ -1,0 +1,26 @@
+name: PolicyLink Nexus Content Types
+description: Content types, taxonomies, and user roles for PolicyLink Nexus
+type: content
+core: ^11
+install:
+  - node
+  - taxonomy
+  - text
+  - media
+  - link
+  - comment
+  - content_translation
+  - user
+config:
+  actions:
+    - source: config/node.type.page.yml
+    - source: config/node.type.research_post.yml
+    - source: config/node.type.community_story.yml
+    - source: config/node.type.policy.yml
+    - source: config/node.type.faq.yml
+    - source: config/node.type.team_member.yml
+    - source: config/taxonomy.vocabulary.research_areas.yml
+    - source: config/taxonomy.vocabulary.policy_categories.yml
+    - source: config/taxonomy.vocabulary.communities.yml
+    - source: config/user.role.registered_community.yml
+    - source: config/user.role.editor.yml

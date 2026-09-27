@@ -1,0 +1,11 @@
+uuid: eb12c7c0-d5c8-4f50-87f7-8eddaac76a42
+langcode: en
+status: true
+dependencies: {  }
+name: 'Research Post'
+type: research_post
+description: 'Policy analysis, briefs, research papers with author attribution and categorization'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

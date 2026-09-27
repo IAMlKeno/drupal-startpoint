@@ -1,0 +1,11 @@
+uuid: e8baa478-4184-4f45-a9f1-840b9325ef55
+langcode: en
+status: true
+dependencies: {  }
+name: Policy
+type: policy
+description: 'Description of specific policies with threaded comments enabled for registered users to submit feedback'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
