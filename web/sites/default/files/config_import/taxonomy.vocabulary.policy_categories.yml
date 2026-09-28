@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Policy Categories'
-vid: policy_categories
-description: 'Types and scopes of policies (Federal, State, Local, etc.)'
-weight: 0
