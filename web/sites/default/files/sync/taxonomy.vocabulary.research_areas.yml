@@ -1,9 +1,0 @@
-uuid: 6a3c0962-fce3-4d2e-8cb8-3911ec215981
-langcode: en
-status: true
-dependencies: {  }
-name: 'Research Areas'
-vid: research_areas
-description: 'Categories for policy research and analysis work'
-weight: 0
-new_revision: false

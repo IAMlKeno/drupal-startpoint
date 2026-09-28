@@ -1,9 +1,0 @@
-uuid: 00255b6a-68d6-498f-acf2-57396afce2b7
-langcode: en
-status: true
-dependencies: {  }
-name: 'Policy Categories'
-vid: policy_categories
-description: 'Types and scopes of policies (Federal, State, Local, etc.)'
-weight: 0
-new_revision: false
