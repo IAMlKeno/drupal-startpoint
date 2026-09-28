@@ -11,7 +11,9 @@ database:
     version: "11.8"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment:
+    - DDEV_PANTHEON_ENVIRONMENT=dev
+    - DDEV_PANTHEON_SITE=1d475295-63fc-42f2-86cb-cef70e4b834c
 nodejs_version: "24"
 corepack_enable: true
 
