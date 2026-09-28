@@ -30,9 +30,9 @@
         {% endif %}
 
         <!-- Description -->
-        {% if content.body %}
+        {% if content.field_summary %}
           <div class="page__hero-description">
-            {{ content.body }}
+            {{ content.field_summary }}
           </div>
         {% endif %}
 
@@ -49,7 +49,8 @@
       </div>
 
       <!-- Featured Image -->
-      {% if content.field_featured_image %}
+      {% set image_check = content.field_featured_image|render|trim|striptags %}
+      {% if image_check is not empty %}
         <div class="page__hero-image">
           {{ content.field_featured_image }}
         </div>
@@ -61,7 +62,7 @@
   <article{{ attributes.addClass('node', 'node--page', 'page') }}>
     <div class="container">
       <div class="page__content">
-        {{ content|without('title', 'body', 'field_header_text', 'field_eyebrow', 'field_featured_image', 'cta') }}
+        {{ content|without('title', 'field_summary', 'field_header_text', 'field_eyebrow', 'field_featured_image', 'cta') }}
       </div>
     </div>
   </article>
