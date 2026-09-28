@@ -1,0 +1,8 @@
+uuid: 3f165518-e1a9-4045-ac27-6b95faafb00f
+langcode: en
+status: true
+dependencies: {  }
+id: policy_comments
+label: 'Policy Comments'
+target_entity_type_id: node
+description: ''

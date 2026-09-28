@@ -1,0 +1,21 @@
+uuid: d919d01d-e137-4707-9b83-ef6c2c18d59a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_policies
+    - node.type.faq
+id: node.faq.field_related_policies
+field_name: field_related_policies
+entity_type: node
+bundle: faq
+label: 'Related Policies'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

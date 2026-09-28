@@ -1,0 +1,22 @@
+uuid: 4af26255-7f7c-4a7c-a8ed-31b13085859a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - policynexus_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: policynexus_theme_breadcrumbs
+theme: policynexus_theme
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

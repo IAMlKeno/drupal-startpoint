@@ -1,0 +1,9 @@
+uuid: 0d4ff257-d1d8-4b0a-a2fd-907df7c2dcec
+langcode: en
+status: true
+dependencies: {  }
+name: Communities
+vid: communities
+description: 'Geographic and demographic communities served by PolicyLink Nexus'
+weight: 0
+new_revision: false

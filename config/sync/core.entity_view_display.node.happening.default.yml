@@ -1,0 +1,29 @@
+uuid: 4a86264b-cc02-4351-a0a6-b8700f3308ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.happening.field_happening_body
+    - node.type.happening
+  module:
+    - text
+    - user
+id: node.happening.default
+targetEntityType: node
+bundle: happening
+mode: default
+content:
+  field_happening_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

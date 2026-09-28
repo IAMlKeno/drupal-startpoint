@@ -1,0 +1,101 @@
+uuid: cb36f2c6-e0be-433b-8819-b47e5d2c016d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.research_post.field_author
+    - field.field.node.research_post.field_featured_image
+    - field.field.node.research_post.field_policy_comment
+    - field.field.node.research_post.field_publication_date
+    - field.field.node.research_post.field_related_posts
+    - field.field.node.research_post.field_summary
+    - node.type.research_post
+  module:
+    - comment
+    - datetime
+    - path
+id: node.research_post.default
+targetEntityType: node
+bundle: research_post
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_policy_comment:
+    type: comment_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_publication_date:
+    type: datetime_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_summary:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_author: true
+  field_featured_image: true
+  field_related_posts: true
+  promote: true
+  sticky: true

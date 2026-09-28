@@ -1,0 +1,24 @@
+uuid: 2e966bdc-d3b8-4796-9e46-99eeb85f7687
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_happening_body
+    - filter.format.full_html
+    - node.type.happening
+  module:
+    - text
+id: node.happening.field_happening_body
+field_name: field_happening_body
+entity_type: node
+bundle: happening
+label: 'Happening Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

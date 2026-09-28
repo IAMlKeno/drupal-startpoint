@@ -1,0 +1,28 @@
+uuid: add5037b-8d4e-4d6d-ae6f-080e292a93e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.policy_comments
+    - field.field.comment.policy_comments.comment_body
+  module:
+    - text
+id: comment.policy_comments.default
+targetEntityType: comment
+bundle: policy_comments
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

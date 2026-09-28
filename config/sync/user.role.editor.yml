@@ -1,0 +1,45 @@
+uuid: afb52ddf-b6ea-4042-a44b-00d739b497e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.community_story
+    - node.type.faq
+    - node.type.page
+    - node.type.policy
+    - node.type.research_post
+    - node.type.team_member
+  module:
+    - comment
+    - node
+    - system
+id: editor
+label: Editor
+weight: 3
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'administer comments'
+  - 'create community_story content'
+  - 'create faq content'
+  - 'create page content'
+  - 'create policy content'
+  - 'create research_post content'
+  - 'create team_member content'
+  - 'delete any community_story content'
+  - 'delete any faq content'
+  - 'delete any page content'
+  - 'delete any policy content'
+  - 'delete any research_post content'
+  - 'delete any team_member content'
+  - 'edit any community_story content'
+  - 'edit any faq content'
+  - 'edit any page content'
+  - 'edit any policy content'
+  - 'edit any research_post content'
+  - 'edit any team_member content'
+  - 'edit own comments'
+  - 'post comments'
+  - 'view own unpublished content'

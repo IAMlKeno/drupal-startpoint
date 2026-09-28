@@ -1,0 +1,40 @@
+uuid: d919e809-557d-43cf-a6d7-83731ad392f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.page.body
+    - field.field.node.page.field_cta
+    - field.field.node.page.field_eyebrow
+    - field.field.node.page.field_featured_image
+    - field.field.node.page.field_header_text
+    - field.field.node.page.field_summary
+    - node.type.page
+  module:
+    - text
+    - user
+id: node.page.email_html
+targetEntityType: node
+bundle: page
+mode: email_html
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cta: true
+  field_eyebrow: true
+  field_featured_image: true
+  field_header_text: true
+  field_summary: true
+  langcode: true

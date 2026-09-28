@@ -1,0 +1,29 @@
+uuid: 33fbe730-02c1-40e6-aadf-bdcde11d6ffe
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.policy_projects
+  module:
+    - system
+    - views
+  theme:
+    - policynexus_theme
+id: policynexus_block__policy_projects_block_1
+theme: policynexus_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:policy_projects-block_1'
+settings:
+  id: 'views_block:policy_projects-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /policies

@@ -1,0 +1,17 @@
+uuid: 299c1ed9-fdc7-4d3b-86c4-b4e26d6f19b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+    - system
+id: registered_community
+label: 'Registered Community'
+weight: 2
+is_admin: false
+permissions:
+  - 'access content'
+  - 'edit own comments'
+  - 'post comments'
+  - 'view own unpublished content'

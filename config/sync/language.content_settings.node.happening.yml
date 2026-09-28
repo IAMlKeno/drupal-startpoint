@@ -1,0 +1,11 @@
+uuid: b5ab20db-6c8f-4e0c-ae1f-26c0f98a74d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.happening
+id: node.happening
+target_entity_type_id: node
+target_bundle: happening
+default_langcode: site_default
+language_alterable: false

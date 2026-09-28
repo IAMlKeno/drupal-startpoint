@@ -1,0 +1,11 @@
+uuid: 27c09755-6236-4a7c-93be-c7feb9a43256
+langcode: en
+status: true
+dependencies: {  }
+name: Page
+type: page
+description: 'Static content (Home, About, generic sections)'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,53 @@
+uuid: 34d9cdbd-a605-458b-9ccb-e03458df16ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.research_post.field_author
+    - field.field.node.research_post.field_featured_image
+    - field.field.node.research_post.field_policy_comment
+    - field.field.node.research_post.field_publication_date
+    - field.field.node.research_post.field_related_posts
+    - field.field.node.research_post.field_summary
+    - node.type.research_post
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.research_post.teaser
+targetEntityType: node
+bundle: research_post
+mode: teaser
+content:
+  field_publication_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_author: true
+  field_featured_image: true
+  field_policy_comment: true
+  field_related_posts: true
+  langcode: true

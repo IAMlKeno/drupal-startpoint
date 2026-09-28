@@ -1,0 +1,29 @@
+uuid: a09337be-8713-4cac-948e-2bf8c2821269
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.get_involved_happenings
+  module:
+    - system
+    - views
+  theme:
+    - policynexus_theme
+id: policynexus_theme_views_block__get_involved_happenings_block_1
+theme: policynexus_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:get_involved_happenings-block_1'
+settings:
+  id: 'views_block:get_involved_happenings-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /get-involved
