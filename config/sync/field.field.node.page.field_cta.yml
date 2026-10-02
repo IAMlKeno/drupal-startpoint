@@ -11,8 +11,8 @@ id: node.page.field_cta
 field_name: field_cta
 entity_type: node
 bundle: page
-label: cta
-description: ''
+label: CTAs
+description: 'Pages can have unlimited CTAs but try to limit to 3 max. CTA design is based on the order they are listed, the first being primary'
 required: false
 translatable: false
 default_value: {  }

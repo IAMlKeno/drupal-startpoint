@@ -18,5 +18,6 @@ global:
       css/components/faq.css: {}
       css/components/team-member.css: {}
       css/components/content-enhancements.css: {}
+      css/components/happenings.css: {}
   js:
     js/theme.js: {}

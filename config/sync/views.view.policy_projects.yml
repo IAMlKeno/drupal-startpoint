@@ -309,9 +309,10 @@ display:
       path: policy-projects
       menu:
         type: normal
-        title: 'Community Voices'
+        title: 'Community & Policy'
         description: ''
-        weight: -50
+        weight: -49
+        enabled: true
         expanded: false
         menu_name: main
         parent: ''

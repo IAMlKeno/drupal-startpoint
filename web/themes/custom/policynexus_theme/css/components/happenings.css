@@ -1,0 +1,17 @@
+.happening {
+  min-height: 40vh;
+  max-height: 40vh;
+}
+
+.happening .container {
+  border: 1px solid #e3ded3;
+  padding:28px 26px 30px;
+  height: 40vh;
+}
+.happening .field--name-field-happening-body p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}

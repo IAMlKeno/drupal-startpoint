@@ -280,7 +280,7 @@ display:
         type: normal
         title: FAQ
         description: ''
-        weight: -47
+        weight: -44
         expanded: false
         menu_name: main
         parent: ''

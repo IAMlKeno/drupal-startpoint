@@ -38,11 +38,6 @@
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__inner">
-      {% if page.footer %}
-        <div class="footer__menu">
-          {{ page.footer }}
-        </div>
-      {% endif %}
       <div class="footer__bottom">
         <div>
           <h3>Project PolicyLink</h3>
@@ -50,14 +45,24 @@
             A demonstration consultation site. Content shown is placeholder material for review purposes.
           </p>
         </div>
-        <hr />
-        <p>&copy; {{ "now"|date("Y") }} {{ site_name }}. All rights reserved.</p>
         <div class="footer__social">
           <!-- Social links can be added here -->
         </div>
+        {% if page.footer %}
+          <div class="footer__menu">
+            {{ page.footer }}
+          </div>
+        {% endif %}
+        <div class="contact">
+          <h6>Contact</h6>
+          <p>hello@policylinkdemo</p>
+          <p>90212345678</p>
+          <p>123 Your Civic Address</p>
+        </div>
       </div>
-      <div class="footer__copyright">
-        {{ "Built with Drupal 11"|t }}
+      <div class="footer__copyright footer__bottom">
+        <div>&copy; 2026 PolicyLink Nexus</div>
+        <div>All rights reserved.</div>
       </div>
     </div>
   </div>

@@ -38,11 +38,17 @@
 
         <!-- CTA Buttons -->
         <div class="page__hero-actions">
-          {% if node.cta %}
-            {% for item in node.cta %}
-              <a href="{{ item.uri }}" class="button button--primary">
+          {% if node.field_cta %}
+            {% for item in node.field_cta %}
+              {% if loop.first %}
+              <a href="{{ item.url }}" class="button button--primary">
                 {{ item.title }}
               </a>
+              {% else %}
+              <a href="{{ item.url }}" class="button button--secondary">
+                {{ item.title }}
+              </a>
+              {% endif %}
             {% endfor %}
           {% endif %}
         </div>
@@ -62,7 +68,7 @@
   <article{{ attributes.addClass('node', 'node--page', 'page') }}>
     <div class="container">
       <div class="page__content">
-        {{ content|without('title', 'field_summary', 'field_header_text', 'field_eyebrow', 'field_featured_image', 'cta') }}
+        {{ content|without('title', 'field_summary', 'field_header_text', 'field_eyebrow', 'field_featured_image', 'field_cta') }}
       </div>
     </div>
   </article>

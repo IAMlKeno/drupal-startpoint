@@ -1,39 +1,41 @@
-uuid: 4a86264b-cc02-4351-a0a6-b8700f3308ee
+uuid: 60125274-ca73-4b18-822d-bdf9627d1349
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.happening.field_happening_body
     - field.field.node.happening.field_tag_line
     - node.type.happening
   module:
+    - layout_builder
     - text
     - user
-id: node.happening.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.happening.teaser
 targetEntityType: node
 bundle: happening
-mode: default
+mode: teaser
 content:
   field_happening_body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_tag_line:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
       link_rel: canonical
     third_party_settings: {  }
-    weight: 102
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true
+  links: true

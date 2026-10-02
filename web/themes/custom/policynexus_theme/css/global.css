@@ -59,7 +59,8 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-text-dark);
-  background-color: var(--color-white);
+  background-color: var(--color-light-bg);
+  background-image: unset;
   line-height: var(--lh-loose);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -396,6 +397,7 @@ header[role="banner"],
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .header__logo {
@@ -437,6 +439,9 @@ header[role="banner"],
   text-transform: uppercase;
   color: var(--color-gray-light);
   margin: 0;
+}
+.primary-nav__menu-link-inner {
+  padding-block: unset !important;
 }
 
 .main-content {
@@ -779,7 +784,7 @@ section:first-child {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 56px;
   align-items: center;
-  max-width: 100%;
+  max-width: 75%;
   padding: 0 24px;
 }
 
@@ -947,4 +952,8 @@ section:first-child {
   .no-print {
     display: none;
   }
+}
+
+footer h1, h2, h3, h4, h5, h6 {
+  color: #fff;
 }
