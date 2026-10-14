@@ -19,30 +19,12 @@
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     </header>
-  {% else %}
-    <header class="policy__hero">
-      <div class="container">
-        <div class="policy__breadcrumb">
-          <a href="/">Home</a> / <a href="/policies">Policies</a>
-        </div>
-        <h1{{ title_attributes.addClass('policy__title') }}>{{ label }}</h1>
-        <div class="policy__status">
-          <span class="policy__badge">Open for Community Comment</span>
-        </div>
-      </div>
-    </header>
   {% endif %}
 
   <div class="container">
     <div class="policy__wrapper">
       <!-- Main content -->
       <div class="policy__main">
-        <!-- Summary (if available) -->
-        {% if content.field_summary %}
-          <div class="policy__summary">
-            <p><strong>Overview:</strong> {{ content.field_summary }}</p>
-          </div>
-        {% endif %}
 
         <!-- Full policy content -->
         {{ content.body }}

@@ -12,9 +12,6 @@
 
 {% include '@policynexus_theme/header.html.twig' %}
 
-{# Check if this is a page node with hero by looking for page__hero class in content #}
-{% set has_page_hero = page.content|render|striptags|trim and 'page__hero' in page.content|render %}
-
 {% if page.hero %}
   <div class="hero">
     {{ page.hero }}
@@ -22,12 +19,49 @@
 {% endif %}
 
 <main class="main-content" role="main">
-  {% if page.content %}
-    {% if has_page_hero %}
-      {# For page nodes with hero, render content without container wrapper #}
+  {% if hero_node %}
+    <header class="page__hero">
+      <div class="container">
+        <div class="page__hero-content">
+          {% if hero_eyebrow %}
+            <div class="page__eyebrow">{{ hero_eyebrow }}</div>
+          {% endif %}
+          <h1 class="page__hero-title">{{ hero_title }}</h1>
+          {% if hero_summary %}
+            <div class="page__hero-description">{{ hero_summary }}</div>
+          {% endif %}
+          {% if hero_ctas %}
+            <div class="page__hero-actions">
+              {% for item in hero_ctas %}
+                <a href="{{ item.url }}" class="button {{ loop.first ? 'button--primary' : 'button--secondary' }}">{{ item.title }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if hero_image %}
+          <div class="page__hero-image">
+            {{ hero_image }}
+          </div>
+        {% endif %}
+      </div>
+    </header>
+  {% endif %}
+
+  {% if page.content or page.sidebar %}
+    {% if page.sidebar %}
+      {# Sidebar region sits to the left of the main content column. #}
+      <div class="container page-layout page-layout--with-sidebar">
+        <aside class="page-layout__sidebar" role="complementary">
+          {{ page.sidebar }}
+        </aside>
+        <div class="page-layout__main">
+          {{ page.content }}
+        </div>
+      </div>
+    {% elseif hero_node %}
+      {# Node templates provide their own containers. #}
       {{ page.content }}
     {% else %}
-      {# For other content types, use container wrapper #}
       <div class="container">
         {{ page.content }}
       </div>

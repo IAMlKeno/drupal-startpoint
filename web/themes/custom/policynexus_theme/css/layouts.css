@@ -13,7 +13,7 @@
   .article-with-sidebar,
   .page-with-sidebar {
     grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    gap: 56px;
+    gap: 20px;
   }
 }
 
@@ -61,4 +61,27 @@ section:last-child {
 
 .main-content .container {
   max-width: 100%;
+}
+
+
+/* Page layout with left sidebar region (page.html.twig).
+   The shared hero sits above this layout; the sidebar sits to the left. */
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+  padding-top: var(--spacing-xl);
+}
+
+.page-layout__sidebar,
+.page-layout__main {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .page-layout--with-sidebar {
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
+    gap: 56px;
+  }
 }

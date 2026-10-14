@@ -13,57 +13,7 @@
 #}
 
 {% if page %}
-  <!-- Full page view with hero -->
-  <header class="page__hero">
-    <div class="container">
-      <div class="page__hero-content">
-        <!-- Eyebrow label -->
-        {% if node.field_eyebrow.value %}
-          <div class="page__eyebrow">{{ node.field_eyebrow.value }}</div>
-        {% endif %}
-
-        <!-- Main heading -->
-        {% if node.field_header_text.value %}
-          <h1 class="page__hero-title">{{ node.field_header_text.value }}</h1>
-        {% else %}
-          <h1 class="page__hero-title">{{ label }}</h1>
-        {% endif %}
-
-        <!-- Description -->
-        {% if content.field_summary %}
-          <div class="page__hero-description">
-            {{ content.field_summary }}
-          </div>
-        {% endif %}
-
-        <!-- CTA Buttons -->
-        <div class="page__hero-actions">
-          {% if node.field_cta %}
-            {% for item in node.field_cta %}
-              {% if loop.first %}
-              <a href="{{ item.url }}" class="button button--primary">
-                {{ item.title }}
-              </a>
-              {% else %}
-              <a href="{{ item.url }}" class="button button--secondary">
-                {{ item.title }}
-              </a>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        </div>
-      </div>
-
-      <!-- Featured Image -->
-      {% set image_check = content.field_featured_image|render|trim|striptags %}
-      {% if image_check is not empty %}
-        <div class="page__hero-image">
-          {{ content.field_featured_image }}
-        </div>
-      {% endif %}
-    </div>
-  </header>
-
+  <!-- Full page view: the hero is rendered by page.html.twig -->
   <!-- Additional content -->
   <article{{ attributes.addClass('node', 'node--page', 'page') }}>
     <div class="container">

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Theme functions for PolicyLink Nexus.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Builds the standard hero shown at the top of every node page, so all
+ * content types share one hero look and feel.
+ */
+function policynexus_theme_preprocess_page(array &$variables) {
+  // Only the canonical node view gets a hero (not edit or other node routes).
+  if (\Drupal::routeMatch()->getRouteName() !== 'entity.node.canonical') {
+    return;
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+
+  $variables['hero_node'] = $node;
+
+  // Eyebrow: the page's own eyebrow, else the content type name.
+  $variables['hero_eyebrow'] = $node->hasField('field_eyebrow') && !$node->get('field_eyebrow')->isEmpty()
+    ? $node->get('field_eyebrow')->value
+    : $node->type->entity->label();
+
+  // Title: the page's header text, else the node title.
+  $variables['hero_title'] = $node->hasField('field_header_text') && !$node->get('field_header_text')->isEmpty()
+    ? $node->get('field_header_text')->value
+    : $node->label();
+
+  $variables['hero_summary'] = $node->hasField('field_summary') && !$node->get('field_summary')->isEmpty()
+    ? $node->get('field_summary')->value
+    : '';
+
+  $ctas = [];
+  if ($node->hasField('field_cta')) {
+    foreach ($node->get('field_cta') as $item) {
+      $ctas[] = [
+        'url' => $item->getUrl()->toString(),
+        'title' => $item->title,
+      ];
+    }
+  }
+  $variables['hero_ctas'] = $ctas;
+
+  $variables['hero_image'] = NULL;
+  if ($node->hasField('field_featured_image') && !$node->get('field_featured_image')->isEmpty()) {
+    $variables['hero_image'] = $node->get('field_featured_image')->view('default');
+  }
+}

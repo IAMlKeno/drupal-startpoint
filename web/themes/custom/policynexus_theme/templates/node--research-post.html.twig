@@ -19,50 +19,28 @@
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     </header>
-  {% else %}
-    <header class="research-post__hero">
-      <div class="container">
-        <div class="research-post__hero-content">
-          <div class="research-post__breadcrumb">
-            <a href="/">Home</a> / <a href="/research">Research & Insights</a>
-          </div>
-          <h1{{ title_attributes.addClass('research-post__title') }}>{{ label }}</h1>
-          <div class="research-post__meta">
-            <span class="research-post__category">Policy Research</span>
-            {% if node.field_publication_date.value %}
-              <span class="research-post__date">{{ node.field_publication_date.value }}</span>
-            {% endif %}
-            {% if node.field_author.value %}
-              <span class="research-post__author">by {{ node.field_author.value }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </header>
   {% endif %}
 
   <div class="container">
+    {% if content.field_featured_image %}
+      <div class="research-post__featured">
+        {{ content.field_featured_image }}
+      </div>
+    {% endif %}
     <div class="research-post__content">
       <!-- Main content column -->
+      <div class="research-post__summary">
+        {{ content.field_summary }}
+      </div>
+      <!-- Main content column -->
       <div class="research-post__body">
-        {% if content.field_summary %}
-          <div class="research-post__summary">
-            <p><em>{{ content.field_summary }}</em></p>
-          </div>
-        {% endif %}
         {{ content.body }}
       </div>
 
       <!-- Sidebar -->
-      <aside class="research-post__sidebar">
-        {% if content.field_featured_image %}
-          <div class="research-post__featured">
-            {{ content.field_featured_image }}
-          </div>
-        {% endif %}
-
+      {# <aside class="research-post__sidebar"> #}
         <!-- Research Area Tags -->
-        <div class="research-post__categories">
+        {# <div class="research-post__categories">
           <h3>Research Areas</h3>
           {{ content.field_research_area }}
         </div>
@@ -72,11 +50,11 @@
           <h3 class="card__title">Share This Research</h3>
           <p>Help spread evidence-based policy insights in your community.</p>
           <a href="/get-involved" class="button button--primary">Get Involved</a>
-        </div>
-      </aside>
+        </div> #}
+      {# </aside> #}
     </div>
 
-    <!-- Related Posts -->
+    {# <!-- Related Posts -->
     {% if content.field_related_posts %}
       <section class="research-post__related">
         <h2>Related Research</h2>
@@ -84,9 +62,27 @@
           {{ content.field_related_posts }}
         </div>
       </section>
+    {% endif %} #}
+
+  <!-- Community comments and form (field_policy_comment) -->
+  {# {% if logged_in is false %}
+    <h1>log in</h1>
+  {% endif %} #}
+  <section class="research-post__comments comments">
+    <h2 class="comments__title">Community Feedback</h2>
+    {% if content.field_policy_comment.0.comments is not empty %}
+      {{ content.field_policy_comment }}
+    {% else %}
+      <div>No comments yets</div>
     {% endif %}
+  </section>
+  {# {% else %}
+    <section>
+      <h4>Log in to leave a comment</h4>
+    </section> #}
 
     <!-- Auto-render all remaining fields -->
-    {# {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_author', 'field_publication_date', 'field_research_area', 'field_related_posts') }} #}
+    {{ content|without('title', 'body', 'featured_image', 'field_summary', 'field_author', 'field_publication_date', 'field_research_area', 'field_related_posts', 'field_policy_comment', 'field_featured_image') }}
+
   </div>
 </article>
