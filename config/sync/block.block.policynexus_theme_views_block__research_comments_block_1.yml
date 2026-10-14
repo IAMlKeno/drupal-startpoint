@@ -1,0 +1,29 @@
+uuid: a86513be-4ed0-4f44-bc1a-ee5979c79c30
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.research_comments
+  module:
+    - system
+    - views
+  theme:
+    - policynexus_theme
+id: policynexus_theme_views_block__research_comments_block_1
+theme: policynexus_theme
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:research_comments-block_1'
+settings:
+  id: 'views_block:research_comments-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /community

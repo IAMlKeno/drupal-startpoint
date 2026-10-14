@@ -1,0 +1,23 @@
+uuid: 85fc1997-eba9-479c-af01-0967dbad9e95
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.research_post
+  module:
+    - node
+id: research_post
+label: 'Research Post'
+type: 'canonical_entities:node'
+pattern: '/community/[node:title]'
+selection_criteria:
+  49347cb3-9f02-4c21-864e-967bc6067c16:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      research_post: research_post
+selection_logic: and
+weight: -5
+relationships: {  }
